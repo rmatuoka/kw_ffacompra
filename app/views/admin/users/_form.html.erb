@@ -1,0 +1,31 @@
+    <div id="Box_register_form">	
+		<%= form_for [:admin, @user] do |f| %>
+			<%= f.error_messages %>
+			<p>
+			    <%= f.text_field :nome %>
+			</p>
+			<p>
+			    <%= f.text_field :email %>
+			</p>
+			<p>
+			    <%= f.text_field :cpf %>
+			</p>
+			<p>
+			    <%= f.text_field :rg %>
+			</p>
+			<p>
+			    <%= f.text_field :cidade %>
+			</p>
+			<p>
+			    <%= f.text_field :estado %>
+			</p>
+		  <h1>Regras</h1>
+		  <p>
+			Tipo:<br />
+			<%= f.radio_button :role, :admin%>Administrador
+			<%= f.radio_button :role, :supervisor %>Supervisor
+			<%= f.radio_button :role, :user %>Usuário
+		  </p><br />
+  		<p><%= f.submit %></p>
+		<%end%>
+	</div>

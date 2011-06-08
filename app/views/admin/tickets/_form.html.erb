@@ -1,0 +1,28 @@
+<%= form_for ([:admin, @ticket]) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :ticket_date %><br />
+    <%= f.date_select :ticket_date %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :ticket_type_id %><br />
+	<%= f.collection_select :ticket_type_id,@ticket_type,:id,:name %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id,@category,:id,:name %>
+  </p>
+  <p>
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,5 @@
+.bundle
+log/*
+config/database.yml
+config/pagseguro.yml
+config/initializers/setup_mail.rb

@@ -1,0 +1,15 @@
+one:
+  name: MyString
+  ticket_date: 2011-05-30
+  price: 9.99
+  ticket_type: 1
+  category: 1
+  published: false
+
+two:
+  name: MyString
+  ticket_date: 2011-05-30
+  price: 9.99
+  ticket_type: 1
+  category: 1
+  published: false

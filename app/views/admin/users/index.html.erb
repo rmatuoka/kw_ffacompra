@@ -1,0 +1,21 @@
+<% title "Usuários" %>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>RG</th>
+	<th>Email</th>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= user.nome %></td>
+      <td><%= user.cpf %></td>
+	  <td><%= user.rg %></td>
+      <td><%= user.email%></td>
+      <td><%= link_to "Show", admin_user_path(user) %></td>
+      <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+      <td><%= link_to "Destroy", admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

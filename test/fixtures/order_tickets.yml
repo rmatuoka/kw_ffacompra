@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  order_id: 1
+  ticket_id: 1
+  amount: 1
+  price: 9.99
+
+two:
+  order_id: 1
+  ticket_id: 1
+  amount: 1
+  price: 9.99

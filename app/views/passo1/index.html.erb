@@ -1,0 +1,81 @@
+<%content_for :head do %>
+	<%= stylesheet_link_tag "passos" %>
+<%end%>
+
+<div id="BgHome">
+    <div id="Search">
+
+    </div>
+
+	<div id="Content_passos">
+
+            <div id="Passos">
+                <center><img src="/images/img_passo1.jpg" width="507" height="66" /></center>
+                <!-- <h1>1º Passo</h1>
+                <br /> -->
+                <h2>Escolha a data e quantidade de ingressos que você deseja adquirir, adicione ao carrinho e clique "PRÓXIMO PASSO".</h2>
+                <br />
+                <p>Para sua segurança, as compras de ingressos devem ser realizadas com, no mínimo, dois dias de antecedência da data desejada.</p>
+                <br />
+                <p>Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bilheteria da Festa de Flores e Morangos de Atibaia.</p>
+                <br />
+
+            </div>
+	</div>
+</div>
+<%@categories.each do |c|%>
+<div id="Semana_<%= "1" if c.id % 2 == 0%>">
+	<div class="Box_content">
+    
+	<h1><%=c.name%></h1><br>
+    <!--   item  inteira  --> 
+		<%c.tickets.all_published.each do |t|%>
+    	<div class="Item_ingresso <%= " inlineBlock" if Ticket.find_by_date(t.ticket_date).count > 1 %>">
+        	<%form_for @cart, :remote => true do |f|%>
+			<img src="/images/bg_ingressos_item_set.gif" width="20" height="104" style="float:left;" />
+        	<div class="Item_latdir"></div>
+			<div class="Item_dia">
+            	<div class="Cleartop1"></div>
+            	<p class="f_dia"><%=t.ticket_date.strftime('%d')%></p>
+                <p class="f_diasem"><%=t.ticket_date.strftime('%A')%></p>
+            </div>
+            <div class="Item_preco">
+            	<div class="Cleartop2"></div>
+                <p class="f_preco"><%=number_to_currency(t.price - t.ticket_type.discount)%></p>
+            </div>
+            <div class="Item_qtde">
+            	<div class="Cleartop7"></div>
+            	<p class="f_qtde">
+					<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
+					<%=f.hidden_field :ticket_id, :value => t.id%>
+					<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
+				</p>
+            </div>
+            <div class="Item_<%=t.ticket_type.name%>">
+            	<div class="Cleartop3"></div>
+				<div id="btn_<%=t.id%>">
+            	<%if current_user.carts.find_by_ticket(t.id).count > 0%>
+					<%=image_tag("bt_adicionado_carrinho.jpg")%>
+				<%else%>
+					<%=image_submit_tag("bt_adicionar_carrinho.jpg")%>
+				<%end%>
+            	</div>
+			</div>
+            <div class="Item_latesq"></div>
+			<%end%>
+    	</div>
+		<%end%>
+        <!--   item inteira  --> 
+          
+    <div class="clear"></div>    	
+  </div>
+</div>
+<%end%>
+
+<div class="Box_content" style="text-align:right;">
+	<img src="/images/img_lineproxpass.png" width="894" height="13" />
+	<%=link_to image_tag("bt_proximopasso.png"), passo2_index_path%>
+</div>
+
+
+

@@ -1,0 +1,103 @@
+<%content_for :head do%>
+	<script>
+	function clearfield(x, text)
+	{
+		if($(x).getValue() == text)
+		{
+			//alert("LIMPAR");
+			$(x).setValue("")
+			//$(x).getValue(text);
+		}
+		else if($(x).getValue() == '')
+		{
+			$(x).setValue(text)
+		}
+	}
+	</script>
+<%end%>
+<div id="MainContent">
+	<!--BOX LOGIN -->
+	<div id="BoxCadastro" class="floatLeft">
+		<div id="Titulo">
+			<%=image_tag("tit_home_cadastrado.jpg")%>
+		</div>
+		<div id="BoxContent">
+			<%=image_tag("box_linha.gif" , :style => "margin:18px 0px 18px 0px;")%>
+			
+			<%= form_for @user_session do |f| %>
+			  <%if flash[:error]%>
+			  	<%= content_tag :div, flash[:error], :id => "flash_error" %>
+			  <%end%>
+			  <p>
+			    <%= f.text_field :email, :value => "Nome", :class => "Form Align_ie7", :onfocus => "clearfield('user_session_email', 'Nome')", :onblur => "clearfield('user_session_email', 'Nome')" %>
+			  </p>
+			  <p>
+			    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "clearfield('user_session_password', 'Senha')", :onblur => "clearfield('user_session_password', 'Senha')" %>
+			  </p>
+			  <p>
+				<%=image_submit_tag("btn_entrar.jpg", :class => "Botao")%>
+			  </p>
+			<% end %>
+			
+			<p class="EsqueciSenha">
+				Esqueceu a senha? <%=link_to "clique aqui", "#"%>
+			</p>
+		</div>
+		<div id="Footer">
+			<%=image_tag("box_cadastro_bottom.jpg")%>
+		</div>
+	</div>
+	
+	<!--BOX CADASTRO -->
+	<div id="BoxCadastro" style="margin-left:46px;" class="floatRight">
+		<div id="Titulo">
+			<%=image_tag("tit_home_n_cadastrado.jpg")%>
+		</div>
+		<div id="BoxContent">
+			<%= form_for @user do |f| %>
+			  <%if flash[:error_cadastro]%>
+			  	<%= content_tag :div, flash[:error_cadastro], :id => "flash_error_cadastro" %>
+			  <%end%>
+				<p>
+				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "clearfield('user_nome', 'Nome')", :onblur => "clearfield('user_nome', 'Nome')" %>
+				  </p>
+				<p>
+				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "clearfield('user_email', 'E-Mail')", :onblur => "clearfield('user_email', 'E-Mail')" %>
+				  </p>
+				<p>
+				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "clearfield('user_password', 'Senha')", :onblur => "clearfield('user_password', 'Senha')" %>
+				  </p>
+					<p>
+				    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %>
+				  </p>
+				<p>
+				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "clearfield('user_cpf', 'CPF')", :onblur => "clearfield('user_cpf', 'CPF')" %>
+				  </p>
+				<p>
+				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "clearfield('user_rg', 'RG')", :onblur => "clearfield('user_rg', 'RG')" %>
+				  </p>
+				<p>
+				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "clearfield('user_cidade', 'Cidade')", :onblur => "clearfield('user_cidade', 'Cidade')" %>
+				  </p>
+				<p>
+				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "clearfield('user_estado', 'Estado')", :onblur => "clearfield('user_estado', 'Estado')" %>
+				  </p>
+			    <p class="treze">
+					Desejo receber informativos da Festa de Flores e Morangos de Atibaia em 
+					meu e-mail.
+				</p>
+				  <p>
+					<%=image_submit_tag("btn_cadastrar.jpg", :class => "Botao")%>
+				  </p>
+			  
+			<div id="cadastro_loading" style="display:none;">
+				<%=image_tag("loading.gif")%>
+			</div>
+			<% end %>
+		</div>
+		<div id="Footer">
+			<%=image_tag("box_cadastro_bottom.jpg")%>
+		</div>
+	</div>
+</div>
+

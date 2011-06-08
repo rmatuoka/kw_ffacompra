@@ -1,0 +1,64 @@
+<%content_for :head do %>
+	<%= stylesheet_link_tag "passos" %>
+<%end%>
+<div id="BgHome">
+    <div id="Search">
+
+    </div>
+	<div id="Content_passos">
+            <div id="Passos">
+                <center><img src="/images/img_passo3.jpg" width="507" height="66" /></center>
+                <!-- <h1>3º Passo</h1>
+                <br /> -->
+                <h2>Efetuar Pagamento</h2>
+                <br />
+                <p>Confira seus dados pessoais e informações de pagamento.  Caso suas informações estejam corretas, clique em "Finalizar a compra".	</p>
+                <br />
+
+            </div>
+	</div>
+</div>
+<div class="Box_content">
+	<div id="Border_top"></div>
+	<div id="Pag_box">
+    	<label class="f_label">Nome: </label><strong class="f_dados"><%=current_user.nome%></strong><br />
+        <label class="f_label">E-mail: </label><strong class="f_dados"><%=current_user.email%></strong><br />
+        <label class="f_label">CPF: </label><strong class="f_dados"><%=current_user.cpf%></strong><br />
+		<br /><br />
+        <p>SEUS INGRESSOS</p>
+        <br />
+		<%@carts.each do |c|%>
+		<div class="Item_ingresso">
+        	<img src="/images/bg_ingressos_item_set.gif" width="20" height="104" style="float:left;" />
+        	<div class="Item_latdir"></div>
+			<div class="Item_dia">
+            	<div class="Cleartop1"></div>
+            	<p class="f_dia"><%=c.ticket.ticket_date.strftime('%d')%></p>
+                <p class="f_diasem"><%=c.ticket.ticket_date.strftime('%A')%></p>
+            </div>
+            <div class="Item_qtde">
+            	<div class="Cleartop1"></div>
+            	<p class="f_qtde"><%=c.amount%></p>
+            </div>
+            <div class="Item_total">
+            	<div class="Cleartop4"></div>
+            	<p class="f_total"><%=number_to_currency(c.price * c.amount)%></p>
+            </div>
+			<div class="Item_promocional">
+				<div class="Cleartop6"></div>
+				<p class="f_promocional">Tipo do ingresso</p>
+			</div>  
+			<div class="Item_latesq"></div> 	                               
+	    	</div>
+		<%end%>
+		<div class="clear"></div>
+    	<%= pagseguro_form @order_product, :submit => "" %>
+        <div class="clear"></div>
+    </div>
+    <div id="Border_bottom" style="margin-bottom:100px;"></div>
+</div>    
+<div class="Box_content" style="text-align:left;">
+	<img src="/images/img_lineproxpass.png" width="894" height="13" />
+	<a href="/passo2"><img src="/images/bt_passoanterior.png" width="149" height="59"/>
+	</a>
+</div>

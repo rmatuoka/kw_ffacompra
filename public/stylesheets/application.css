@@ -1,0 +1,199 @@
+*
+{
+	margin:0px;
+	padding:0px;
+	font-family:Arial;
+}
+
+p
+{
+	font-family:Arial;
+	size:13px;
+	color:#6d6d6d;
+}
+
+a
+{
+	color:#623309;
+}
+
+body
+{
+	background-color:#ffffff !important;
+}
+
+#MainContent
+{
+	
+}
+	
+	#MainContent #BoxCadastro
+	{
+		width:304px;
+		height:auto;
+		min-height:100px;
+	}
+	
+		#MainContent #BoxCadastro #Titulo
+		{
+			display:block;
+		}
+		
+		#MainContent #BoxCadastro #BoxContent
+		{
+			width:255px;
+			background-image:url('/images/bg_box_home_cadastro.gif');
+			background-repeat:repeat-y;
+			padding:0px 27px 0px 27px;
+		}
+		
+			#MainContent #BoxCadastro #BoxContent .Form
+			{
+				background-image:url('/images/bg_input_cadastro_login.jpg');
+				background-repeat:no-repeat;
+				width:245px;
+				height:43px;
+				border:none;
+				background-color:transparent;
+				font-size:14px;
+				padding-left:7px;
+				color:#666666 !important;
+			}
+			
+			#MainContent #BoxCadastro #BoxContent .Botao
+			{
+				margin-left:60px;
+				margin-top:30px;
+			}
+			
+			#MainContent #BoxCadastro #BoxContent .EsqueciSenha
+			{
+				margin-top:20px;
+				font-size:13px !important;
+			}
+		
+		#MainContent #BoxCadastro #Footer
+		{
+			width:100%;
+		}
+		
+		#MainContent #Ticket
+		{
+			margin-bottom:23px;
+			margin-right:20px;
+		}
+			.Align_ie7
+			{
+				*padding: 15px 0 0 0;
+				 /*\**/padding: 15px 0 0 0\9;
+				*height:30px !important;
+				/*\**/height:30px\9 !important;
+				width:64px;				
+			}		
+			#MainContent #Ticket .Form
+			{
+				background-image:url('/images/bg_input_ingressos.jpg');
+				height:45px;
+				width:64px;
+				border:none;
+				text-align:center;
+				background-color:transparent;
+				color:#405078 !important;
+				font-size:30px !important;
+				margin-top:10px !important;				
+			}
+			
+			#MainContent #Ticket #Dia
+			{
+				background-image:url('/images/bg_dia_ingresso.jpg');
+				background-repeat:no-repeat;
+				height:42px;
+				width:68px;
+				color:#205220 !important;
+				font-size:30px !important;
+				text-align:center;				
+			}
+
+/*FLASH MESSAGES*/
+#flash_login, #flash_notice, #flash_error, #flash_alert, #flash_error_cadastro {
+ 	font-size:13px;
+	padding: 5px 8px;
+	margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_login, #flash_error, #flash_error_cadastro, #flash_alert {
+  color:red;
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.Preco
+{
+	font-family:'Myriad Pro';
+	font-size:23px !important;
+	color:#8b0000 !important;
+	text-align:center;
+}
+
+.Quantidade
+{
+	font-family:'Myriad Pro';
+	font-size:23px !important;
+	color:#2d3e6b !important;
+	text-align:center;
+}
+
+.Total
+{
+	font-family:'Myriad Pro';
+	font-size:23px !important;
+	color:#8b0000 !important;
+	text-align:center;
+}
+
+#BoxTotal
+{
+	width:162px;
+	height:130px;
+	background-image:url('/images/box_total.gif');
+	background-repeat:no-repeat;
+	font-size:24px;
+	font-family:;
+	color:#6d6d6d;
+	text-align:center;
+}
+
+	#BoxTotal p
+	{
+		font-size:24px;
+		color:#6d6d6d;
+		text-align:center;
+		padding-top:50px;
+	}
+
+/*CLASSES*/
+.treze
+{
+	font-size:13px;
+}
+.floatLeft
+{
+	float:left;
+}
+.floatRight
+{
+	float:left;
+}
+.center
+{
+	text-align:center;
+}
+.inlineBlock
+{
+	display:inline-block;
+}

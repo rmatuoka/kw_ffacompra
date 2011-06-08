@@ -1,0 +1,19 @@
+<% title "Product" %>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @user.first_name %>
+</p>
+<p>
+  <strong>Sobrenome:</strong>
+  <%= @user.last_name %>
+</p>
+<p>
+  <strong>E-mail:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <%= link_to "Edit", edit_admin_user_path(@user) %> |
+  <%= link_to "Destroy", admin_user_path(@user), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_users_path %>
+</p>

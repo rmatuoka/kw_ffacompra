@@ -1,0 +1,74 @@
+<%content_for :head do %>
+	<%= stylesheet_link_tag "passos" %>
+<%end%>
+
+<div id="BgHome">
+    <div id="Search">
+
+    </div>
+	<div id="Content_passos">
+
+            <div id="Passos">
+                <center><img src="/images/img_passo2.jpg" width="507" height="66" /></center>
+                <!-- <h1>2º Passo</h1>
+                <br /> -->
+                <h2>Efetuar Pagamento</h2>
+                <br />
+                <p>Confira seus dados pessoais e informações de pagamento.  Caso suas informações estejam corretas, clique em "Finalizar a compra".	</p>
+                <br />
+
+            </div>
+	</div>
+</div>
+<div class="Box_content">
+
+        <!--     item    -->
+		<%@cart.each do |c|%>
+		<div class="Item_ingresso" >
+        	<img src="/images/bg_ingressos_item_set.gif" width="20" height="104" style="float:left;" />
+        	<div class="Item_latdir"></div>
+			<div class="Item_dia">
+            	<div class="Cleartop1"></div>
+            	<p class="f_dia"><%=c.ticket.ticket_date.strftime('%d')%></p>
+                <p class="f_diasem"><%=c.ticket.ticket_date.strftime('%A')%></p>
+            </div>
+			<div class="Item_precounidade">
+            	<div class="Cleartop2"></div>
+                <p class="f_preco"><%=number_to_currency(c.price)%></p>
+            </div>                                   
+            <div class="Item_qtde">
+            	<div class="Cleartop1"></div>
+            	<p class="f_qtde"><%=c.amount%></p>
+            </div>              
+            <div class="Item_total">
+            	<div class="Cleartop4"></div>
+            	<p class="f_total"><%=number_to_currency(c.price * c.amount)%>
+				<%@total_final += c.price * c.amount%></p>
+            </div> 
+          <div class="Item_excluir">
+           	<div class="Cleartop4"></div>
+            	<p class="f_total"><%= link_to image_tag("bt_excluir_carrinho.gif"), c, :confirm => 'Deseja excluir este ingresso do seu carrinho?', :method => :delete %></p>
+            </div> 
+            <div class="Item_<%=c.ticket.ticket_type.name%>">
+            	<div class="Cleartop6"></div>
+            	<p class="f_promocional">Tipo do ingresso</p>
+            </div>                                
+            <div class="Item_latesq"></div>   
+    	</div>
+		
+		<%end%>
+        <!--     item    -->
+        
+    	<div class="Item_total_geral">
+        <div class="Cleartop5"></div>
+        <div class="f_totalgeral"><%=number_to_currency(@total_final)%></div>
+        </div>
+        
+</div>    
+<div class="Box_content" style="text-align:left;">
+	<img src="/images/img_lineproxpass.png" width="894" height="13" />
+	<%=link_to image_tag("bt_passoanterior.png"), "/passo1"%>
+	<%=link_to image_tag("bt_proximopasso.png", :style=> "float:right;"), "/passo3"%>
+</div>
+
+

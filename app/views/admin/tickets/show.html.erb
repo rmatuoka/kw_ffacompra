@@ -1,0 +1,32 @@
+<% title "Ticket" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ticket.name %>
+</p>
+<p>
+  <strong>Ticket Date:</strong>
+  <%= @ticket.ticket_date %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @ticket.price %>
+</p>
+<p>
+  <strong>Ticket Type:</strong>
+  <%= @ticket.ticket_type.name %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @ticket.category.name %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @ticket.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_ticket_path(@ticket) %> |
+  <%= link_to "Destroy", admin_ticket_path(@ticket), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_tickets_path %>
+</p>
