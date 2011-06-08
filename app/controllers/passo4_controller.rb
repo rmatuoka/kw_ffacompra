@@ -1,6 +1,6 @@
 class Passo4Controller < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter :logado
+  #before_filter :logado
   
   def index
     

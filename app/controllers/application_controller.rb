@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
     #Authlogic
     helper_method :current_user
+    rescue_from 'Acl9::AccessDenied', :with => :access_denied
 
     private
 
@@ -23,7 +24,7 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    rescue_from 'Acl9::AccessDenied', :with => :access_denied
+    
 
     def access_denied
       if current_user
