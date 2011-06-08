@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>PAGAMENTO CONFIRMADO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<style>
+img {display:block;}
+</style>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="550" height="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
+	<tr>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_01.gif" width="51" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_02.gif" width="19" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_03.gif" width="87" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_04.gif" width="99" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_05.gif" width="83" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_06.gif" width="166" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_07.gif" width="45" height="220"></td>
+	</tr>
+	<tr>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_08.gif" width="51" height="27"></td>
+		<td height="27" colspan="5" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_09.gif">
+          <font face="Verdana, Geneva, sans-serif" size="3" >
+            Ítens Comprados:
+          </font>
+        </td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_14.gif" width="45" height="27"></td>
+	</tr>
+<!--INICIO DO LOOP-->
+	<% @order_itens.each do |item|%>
+	<tr>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_15.gif" width="51" height="141"></td>
+	    <td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_16.gif" width="19" height="141"></td>
+		<td width="87" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_17.gif" style="padding-top:2px;">
+          <font face="Verdana, Geneva, sans-serif" size="6" style="color:#060; margin-left:5px; margin-top:10px;">
+            <%= item.amount %></font></td>
+		<td width="99" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_18.gif">
+          <font face="Verdana, Geneva, sans-serif" size="4" style="color:#900;">
+            <p style="margin-top:3px;">
+              <%= item.ticket.ticket_date.strftime("%d") %><br>
+		      <%= item.ticket.ticket_date.strftime("%A") %>
+            </p>
+          </font>
+        </td>
+		<td width="83" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_19.gif" style="padding-top:3px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
+            <%=number_with_delimiter(item.price)%>
+          </font>
+        </td>
+		<td width="166" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_20.gif" style="padding-top:6px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
+            <%= item.ticket.category.name %>
+          </font>
+        </td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_21.gif" width="45" height="141"></td>
+	</tr>
+	<% end %>
+<!--FIM DO LOOP -->
+	<tr>
+		<td width="51" height="19" ></td>
+		<td height="19" colspan="5">
+          <font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
+            *Imprima e apresente este código de barras na portaria da festa.
+          </font>
+        </td>
+		<td width="45" height="19"></td>
+	</tr>
+	<tr>
+		<td width="51" height="143"></td>
+		<td height="143" colspan="5"></td>
+		<td width="45" height="143"></td>
+	</tr>
+</table>
+
+</body>
+
+</html>

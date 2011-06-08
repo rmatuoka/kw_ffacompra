@@ -1,12 +1,167 @@
 --- 
+"6": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "6"
+  item_valor_1: "12"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "4"
+  item_descr_1: Entrada Inteira 04/11/2011
+"7": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada Promocional 02/11/2011
+  encoding: UTF-8
+  ref_transacao: "7"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "6"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_valor_3: "8"
+  item_quant_3: "1"
+  item_id_1: "5"
+  item_id_2: "3"
+  item_descr_1: Entrada Meia 04/11/2011
+  item_id_3: "1"
+  item_descr_2: Entrada Meia 03/11/2011
+"8": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada Inteira 07/11/2011
+  item_id_5: "16"
+  encoding: UTF-8
+  ref_transacao: "8"
+  item_valor_1: "8"
+  item_descr_4: Entrada Inteira 09/11/2011
+  item_id_6: "17"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "6"
+  item_descr_5: Entrada Meia 17/11/2011
+  item_id_7: "20"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_valor_3: "12"
+  item_descr_6: Entrada Inteira 18/11/2011
+  item_quant_3: "1"
+  item_valor_4: "8"
+  item_descr_7: Entrada Inteira 24/11/2011
+  item_id_8: "23"
+  item_quant_4: "1"
+  item_valor_5: "6"
+  item_descr_8: Entrada Meia 25/11/2011
+  item_quant_5: "1"
+  item_valor_6: "12"
+  item_id_1: "1"
+  item_quant_6: "1"
+  item_valor_7: "12"
+  item_id_2: "3"
+  item_quant_7: "1"
+  item_valor_8: "6"
+  item_descr_1: Entrada Promocional 02/11/2011
+  item_id_3: "6"
+  item_quant_8: "1"
+  item_descr_2: Entrada Meia 03/11/2011
+  item_id_4: "9"
+"9": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada Meia 04/11/2011
+  encoding: UTF-8
+  ref_transacao: "9"
+  item_valor_1: "8"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "6"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_valor_3: "6"
+  item_quant_3: "1"
+  item_id_1: "1"
+  item_id_2: "3"
+  item_descr_1: Entrada Promocional 02/11/2011
+  item_id_3: "5"
+  item_descr_2: Entrada Meia 03/11/2011
 "1": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8
   ref_transacao: "1"
-  item_valor_1: "800"
-  commit: asd
+  item_valor_1: "8"
+  commit: ""
   moeda: BRL
   item_quant_1: "1"
   email_cobranca: user@example.com
   item_id_1: "1"
   item_descr_1: Entrada Promocional 02/11/2011
+"2": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "2"
+  item_valor_1: "12"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "8"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_id_1: "2"
+  item_id_2: "1"
+  item_descr_1: Entrada Inteira 03/11/2011
+  item_descr_2: Entrada Promocional 02/11/2011
+"3": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "3"
+  item_valor_1: "12"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "4"
+  item_descr_1: Entrada Inteira 04/11/2011
+"10": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada Promocional 02/11/2011
+  encoding: UTF-8
+  ref_transacao: "10"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "6"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_valor_3: "8"
+  item_quant_3: "1"
+  item_id_1: "5"
+  item_id_2: "3"
+  item_descr_1: Entrada Meia 04/11/2011
+  item_id_3: "1"
+  item_descr_2: Entrada Meia 03/11/2011
+"4": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "4"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "3"
+  item_descr_1: Entrada Meia 03/11/2011
+"5": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "5"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "5"
+  item_descr_1: Entrada Meia 04/11/2011

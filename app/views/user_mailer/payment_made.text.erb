@@ -1,1 +1,13 @@
-Pagamento Efetuado!
+PAGAMENTO CONFIRMADO
+
+
+Ítens Comprados:
+
+
+<% @order_itens.each do |item|%>
+	QUANTIDADE	DIA	TOTAL	TIPO		
+	<%= item.amount %> 		<%= item.ticket.ticket_date.strftime("%d") %>-<%= item.ticket.ticket_date.strftime("%A") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.category.name %>
+<% end %>
+
+*Imprima e apresente este código de barras na portaria da festa.
+

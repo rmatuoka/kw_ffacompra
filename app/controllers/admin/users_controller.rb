@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to admin_users_path(@user), :notice  => "Dados Atualizados com sucesso!"
+      redirect_to admin_user_path(@user), :notice  => "Dados Atualizados com sucesso!"
     else
       render :action => 'edit'
     end

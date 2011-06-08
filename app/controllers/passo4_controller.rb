@@ -17,7 +17,7 @@ class Passo4Controller < ApplicationController
           order.save
           
           if order.status.to_s.include? 'completed'
-            UserMailer.payment_made(@user).deliver
+            UserMailer.payment_made(order).deliver
           #enviar email de confirmação
           #  corpo = "
           #  <b>Nome:</b>#{transaction.nome}<br />
