@@ -210,6 +210,16 @@ table
 		width:145px !important;
 		height:128px;	
 	}
+	.Item_Domingo
+	{
+		float:left;
+		position:relative;
+		background-image:url(/images/bg_ingressos_item_domingo.png);
+		background-repeat:no-repeat;
+		background-position:center top;
+		width:145px !important;
+		height:128px;	
+	}	
 	
 	
 		.Cleartop6{ width:10px; height:50px;}
@@ -285,6 +295,16 @@ table
 		width:144px;
 		height:106px;	
 	}	
+	.Item_Domingo
+	{
+		float:left;
+		position:relative;
+		background-image:url(/images/bg_ingressos_item_domingo.png);
+		background-repeat:no-repeat;
+		background-position:center top;
+		width:144px;
+		height:106px;	
+	}		
 	
 #Faq_box
 {
