@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110607151702) do
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "ticket_id"
-    t.decimal  "price",      :precision => 10, :scale => 2
+    t.decimal  "price",      :precision => 10, :scale => 0
     t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20110607151702) do
     t.integer  "order_id"
     t.integer  "ticket_id"
     t.integer  "amount"
-    t.decimal  "price",      :precision => 10, :scale => 2
+    t.decimal  "price",      :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
