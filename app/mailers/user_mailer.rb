@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   default :from => "FESTA DAS FLORES ATIBAIA<contato@festadasfloresdeatibaia.com.br>"
-  default :bcc => "VENDAS - FESTA DAS FLORES<silva_v_bruno@hotmail.com>"
+  default :bcc => "VENDAS - FESTA DAS FLORES<vendas@festadasfloresdeatibaia.com.br>"
   
   def payment_made(order)
     @order = order

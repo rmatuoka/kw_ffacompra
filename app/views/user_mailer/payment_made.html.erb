@@ -65,10 +65,13 @@ img {display:block;}
         </td>
 		<td width="45" height="19"></td>
 	</tr>
-	<tr>
-		<td width="51" height="143"></td>
-		<td height="143" colspan="5"></td>
-		<td width="45" height="143"></td>
+	<tr>	
+		<td width="10" height="10"></td>
+		<td height="143" colspan="5">
+			<img style="-webkit-user-select: none" src="http://www.festadasfloresdeatibaia.com.br/images/email/codbarras/barcode.php?bdata=<%= @order.pagseguro_id %>&amp;scale=1.2&amp;type=png">
+			<%= @order.pagseguro_id %>
+		</td>
+		<td width="10" height="10"></td>
 	</tr>
 </table>
 
