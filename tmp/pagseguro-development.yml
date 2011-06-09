@@ -1,4 +1,23 @@
 --- 
+"11": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada Meia 04/11/2011
+  encoding: UTF-8
+  ref_transacao: "11"
+  item_valor_1: "8"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  item_valor_2: "6"
+  email_cobranca: user@example.com
+  item_quant_2: "1"
+  item_valor_3: "6"
+  item_quant_3: "1"
+  item_id_1: "1"
+  item_id_2: "3"
+  item_descr_1: Entrada Promocional 02/11/2011
+  item_id_3: "5"
+  item_descr_2: Entrada Meia 03/11/2011
 "6": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8
@@ -124,6 +143,17 @@
   email_cobranca: user@example.com
   item_id_1: "4"
   item_descr_1: Entrada Inteira 04/11/2011
+"4": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "4"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "3"
+  item_descr_1: Entrada Meia 03/11/2011
 "10": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   item_descr_3: Entrada Promocional 02/11/2011
@@ -143,17 +173,6 @@
   item_descr_1: Entrada Meia 04/11/2011
   item_id_3: "1"
   item_descr_2: Entrada Meia 03/11/2011
-"4": !map:ActiveSupport::HashWithIndifferentAccess 
-  tipo: CP
-  encoding: UTF-8
-  ref_transacao: "4"
-  item_valor_1: "6"
-  commit: ""
-  moeda: BRL
-  item_quant_1: "1"
-  email_cobranca: user@example.com
-  item_id_1: "3"
-  item_descr_1: Entrada Meia 03/11/2011
 "5": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8

@@ -6,7 +6,8 @@ PAGAMENTO CONFIRMADO
 
 <% @order_itens.each do |item|%>
 	QUANTIDADE	DIA	TOTAL	TIPO		
-	<%= item.amount %> 		<%= item.ticket.ticket_date.strftime("%d") %>-<%= item.ticket.ticket_date.strftime("%A") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.category.name %>
+	<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.ticket_type.name %>
+							<%= item.ticket.ticket_date.strftime("%A") %>
 <% end %>
 
 *Imprima e apresente este código de barras na portaria da festa.
