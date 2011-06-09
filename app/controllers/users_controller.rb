@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user.role = "user"
     if @user.save
       #UserMailer.payment_made(@user).deliver
-      redirect_to root_url, :notice => "Successfully created user."
+      redirect_to passo1_index_path, :notice => "Successfully created user."
     else
       flash[:error_cadastro] = "Todos os campos são obrigatórios!"
       redirect_to home_index_path

@@ -1,8 +1,9 @@
 class Admin::StaticContentsController < ApplicationController  
-  layout "admin"  
   access_control do
       allow :admin, :to => [:index]
-    end
+  end
+  
+  layout "admin"  
     
   def index
     

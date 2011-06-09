@@ -24,14 +24,7 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    
-
     def access_denied
-      if current_user
-        redirect_to root_path
-      else
-        flash[:notice] = 'Acesso negado. Você precisa estar logado.'
-        redirect_to login_path
-      end
+      redirect_to login_path
     end
 end
