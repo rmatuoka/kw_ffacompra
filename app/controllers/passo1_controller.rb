@@ -5,6 +5,7 @@ class Passo1Controller < ApplicationController
     @categories = Category.all
     
     @cart = current_user.carts.build
+	
   end
   
   def erro

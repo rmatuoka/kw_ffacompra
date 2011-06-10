@@ -1,5 +1,9 @@
 <%content_for :head do %>
 	<%= stylesheet_link_tag "passos" %>
+	
+	<%if flash[:alert]%>
+		<script>alert('Para avançar, adicione ao menos um ingresso ao seu carrinho!')</script>
+	<%end%>
 <%end%>
 
 <div id="BgHome">

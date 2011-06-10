@@ -44,7 +44,7 @@
             	<div class="Cleartop4"></div>
             	<p class="f_total"><%=number_to_currency(c.price * c.amount)%></p>
             </div>
-			<div class="Item_promocional">
+			<div class="Item_<%=c.ticket.ticket_type.name%>">
 				<div class="Cleartop6"></div>
 				<p class="f_promocional">Tipo do ingresso</p>
 			</div>  
