@@ -34,8 +34,8 @@
 	<h1><%=c.name%></h1><br>
     <!--   item  inteira  --> 
 		<%c.tickets.all_published.each do |t|%>
-    	<div class="Item_ingresso <%= " inlineBlock" if Ticket.find_by_date(t.ticket_date).count > 1 %>">
-        	<%form_for @cart, :remote => true do |f|%>
+    	<div class="Item_ingresso <%=t.classe %>">
+        	<%=form_for @cart, :remote => true do |f|%>
 			<img src="/images/bg_ingressos_item_set.gif" width="20" height="104" style="float:left;" />
         	<div class="Item_latdir"></div>
 			<div class="Item_dia">
