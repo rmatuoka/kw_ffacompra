@@ -1,0 +1,5 @@
+<div id="search">
+<%=form_tag '/admin/searchs/results', :method => :get %>
+	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
+	<%=submit_tag "Buscar"%>
+</div>

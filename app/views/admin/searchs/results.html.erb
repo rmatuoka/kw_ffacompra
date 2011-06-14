@@ -1,0 +1,15 @@
+<%if !@Results.blank?%>
+	<h2>Busca por: <%=params[:keyword]%></h2>
+	<br>
+	<table>
+	<% @Results_itens.each do |item| %>
+		<tr>
+			<td>	
+				
+				<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.ticket_type.name %> <%= item.ticket.ticket_date.strftime("%A") %> 
+			</td>
+		</tr>
+
+	<%end%>
+	</table>
+<%end%>
