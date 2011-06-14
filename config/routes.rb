@@ -22,6 +22,11 @@ KwFfacompra::Application.routes.draw do
     resources :tickets
     resources :static_contents
     resources :users
+    resources :searchs do
+      collection do
+        get 'results'
+      end
+    end
     
     root :to => "static_contents#index"
   }
