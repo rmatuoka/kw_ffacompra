@@ -92,13 +92,11 @@ table
 }
 .Item_ingresso
 {
+	
 	/*float:left;*/
 	/*display:block;*/
 	position:relative;
 	height:110px;
-	min-width:200px;
-	width:auto;
-	*width:100%;
 	margin-left:22px;
 }
 .Item_ingresso p
@@ -385,5 +383,9 @@ table
 
 .inlineBlock
 {
-	display:inline-block !important;
+	zoom: 1 !important;
+   	*display:inline !important;
+	display:inline-block;
+	width:443px !important;
+	*width:445px !important;
 }

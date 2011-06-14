@@ -59,9 +59,9 @@
             	<div class="Cleartop3"></div>
 				<div id="btn_<%=t.id%>">
             	<%if current_user.carts.find_by_ticket(t.id).count > 0%>
-					<%=image_tag("bt_adicionado_carrinho.jpg")%>
+					<%=image_tag("bt_adicionado_carrinho.png")%>
 				<%else%>
-					<%=image_submit_tag("bt_adicionar_carrinho.jpg")%>
+					<%=image_submit_tag("bt_adicionar_carrinho.png")%>
 				<%end%>
             	</div>
 			</div>

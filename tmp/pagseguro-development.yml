@@ -259,6 +259,24 @@
   item_id_2: "2"
   item_descr_1: Entrada Promocional 02/11/2011
   item_descr_2: Entrada Inteira 03/11/2011
+"156": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "156"
+  item_valor_1: "6"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "1"
+  email_cobranca: user@example.com
+  item_id_1: "3"
+  item_descr_1: Entrada Meia 03/11/2011
+"157": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "157"
+  commit: ""
+  moeda: BRL
+  email_cobranca: user@example.com
 "3": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8
