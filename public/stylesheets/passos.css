@@ -92,8 +92,8 @@ table
 }
 .Item_ingresso
 {
-	float:left;
-	display:block;
+	/*float:left;*/
+	/*display:block;*/
 	position:relative;
 	height:110px;
 	min-width:200px;
@@ -381,4 +381,10 @@ table
 	display:block;
 	margin-right:22px;
 	float:right;
+}
+
+.inlineBlock
+{
+	display:inline-block !important;
+}
 }
