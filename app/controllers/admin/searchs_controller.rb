@@ -1,5 +1,7 @@
 class Admin::SearchsController < ApplicationController
+  layout "admin"
   
+    
   def index
     
   end
