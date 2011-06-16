@@ -1,14 +1,28 @@
 <%if !@Results.blank?%>
 	<h2>Busca por: <%=params[:keyword]%></h2>
 	<br>
-	<table>
+	<table border="1" align="center">
+		<tr>
+		    <th width="150px">Quantidade</th>
+		    <th width="150px">Dia</th>
+		    <th width="150px">Valor</th>
+		    <th width="200px">Tipo</th>
+	  </tr>
 	<% @Results_itens.each do |item| %>
 		<tr>
-			<td>					
-				<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.ticket_type.name %> <%= item.ticket.ticket_date.strftime("%A") %> 
-			</td>
+			<td align="center"><%= item.amount %></td>
+			<td align="center">
+				<%= item.ticket.ticket_date.strftime("%d") %><br/>
+				<%= item.ticket.ticket_date.strftime("%A") %>
+			</td align="center">
+			<td align="center"><%=number_with_delimiter(item.price)%></td>
+			<td align="center"><%= item.ticket.ticket_type.name %></td>
 		</tr>
 	<%end%>
 	</table>
+	<br />
 	<%= link_to "Voltar", admin_searchs_path %>
+<%else%>
+	<h2>Nenhum registro foi localizado!</h2><br/>
+	<%= link_to "Voltar", admin_searchs_path%>
 <%end%>

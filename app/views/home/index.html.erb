@@ -1,5 +1,7 @@
 <%content_for :head do%>
 	<script>
+	var htmlold = "";
+	
 	function clearfield(x, text)
 	{
 		if($(x).getValue() == text)
@@ -13,6 +15,34 @@
 			$(x).setValue(text)
 		}
 	}
+
+	function novoConteudo(){
+		htmlold = $('BoxContent').innerHTML;
+		new Ajax.Request('/password_resets/new',
+		  {
+		    method:'get',
+			onLoading: function (mostrarLoading){
+				$('loading-forgot').show();
+			},
+			onLoaded: function (mostrarResposta){
+				$('loading-forgot').hide();
+			},
+		    onSuccess: function(transport){
+		      var response = transport.responseText || "Falha";
+		      //alert("Success! \n\n" + response);
+			$('BoxContent').update(response); 
+		    },
+		    onFailure: function(){ alert('Falha ao carregar a página!') }
+		  })
+	}
+
+	function voltaConteudo(){
+		htmlold = "";
+		$('BoxContent').update(htmlold); 
+	}
+	
+	
+	
 	</script>
 <%end%>
 <div id="MainContent">
@@ -38,9 +68,9 @@
 				<%=image_submit_tag("btn_entrar.jpg", :class => "Botao")%>
 			  </p>
 			<% end %>
-			
+			<%= image_tag "loading.gif", :style => 'display:none;', :id => 'loading-forgot' %>
 			<p class="EsqueciSenha">
-				<!-- Esqueceu a senha? <%=link_to "clique aqui", "#"%>  -->
+				<%= link_to "esqueci a senha", "#", :onclick=>"novoConteudo()" %>
 			</p>
 		</div>
 		<div id="Footer">

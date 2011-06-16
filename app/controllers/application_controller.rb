@@ -2,8 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
     #Authlogic
-    helper_method :current_user
+    helper :all
+    helper_method :current_user, :current_user_session
     rescue_from 'Acl9::AccessDenied', :with => :access_denied
+
+
 
     private
 

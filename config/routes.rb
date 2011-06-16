@@ -16,6 +16,7 @@ KwFfacompra::Application.routes.draw do
   resources(:order){
     resources :order_tickets
   }
+  resources :password_resets
   
   #Inicio do namespace Admin
   namespace(:admin){

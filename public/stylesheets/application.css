@@ -71,6 +71,19 @@ body
 				margin-top:20px;
 				font-size:13px !important;
 			}
+			#MainContent #BoxCadastro #BoxContent #Box_Forgot .Center
+			{
+				margin:auto;
+				text-align:center;
+			}
+			#MainContent #BoxCadastro #BoxContent #Box_Forgot h2
+			{
+				font-size:16px !important;
+			}
+			#MainContent #BoxCadastro #BoxContent #Box_Forgot #voltar
+			{
+				font-size:13px !important;
+			}
 		
 		#MainContent #BoxCadastro #Footer
 		{

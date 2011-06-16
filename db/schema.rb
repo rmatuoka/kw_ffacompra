@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110614143923) do
+ActiveRecord::Schema.define(:version => 20110614203905) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20110614143923) do
     t.string   "cidade"
     t.string   "estado"
     t.boolean  "receber_info"
+    t.string   "perishable_token"
   end
 
 end

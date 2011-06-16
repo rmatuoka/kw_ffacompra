@@ -1,0 +1,22 @@
+<%if flash[:error]%>
+	<%= content_tag :div, flash[:error], :id => "flash_error" %>
+<%end%>
+<div id ="Box_Forgot">
+	<%=image_tag("box_linha.gif" , :style => "margin:18px 0px 18px 0px;")%>	
+	<div class="Center">
+		<h2>Esqueci a senha</h2> 
+	</div>
+	<br />
+	<p class="treze">Digite o seu e-mail, será enviado um novo link de acesso.</p>
+	<br />
+	<%= form_tag password_resets_path do %>
+		<p>
+			<%= text_field_tag "email","E-mail",:class => "Form Align_ie7", :onfocus => "clearfield('email', 'E-mail')", :onblur => "clearfield('email', 'E-mail')"%>
+		</p>
+		<br />
+		<div class="Center">
+				<%= submit_tag "Enviar", :id=>"botao" %> | 
+				<%= link_to "Voltar", "", :id=>"voltar", :onclick=>"voltaConteudo()" %>
+		</div>
+	<% end %>
+</div>
