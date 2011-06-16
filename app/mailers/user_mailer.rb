@@ -1,11 +1,11 @@
 class UserMailer < ActionMailer::Base
   default :from => "FESTA DAS FLORES ATIBAIA<contato@festadasfloresdeatibaia.com.br>"
- #"VENDAS - FESTA DAS FLORES<vendas@festadasfloresdeatibaia.com.br>"
+ #default :from =>"VENDAS - FESTA DAS FLORES<vendas@festadasfloresdeatibaia.com.br>"
   
   def payment_made(order)
     @order = order
     @order_itens = @order.order_tickets
-    mail(:to => order.user.email, :bcc => "VENDAS - FESTA DAS FLORES<silva_v_bruno@hotmail.com>", :subject => "Pagamento Efetuado")
+    mail(:to => order.user.email, :bcc => "VENDAS - FESTA DAS FLORES<vendas@festadasfloresdeatibaia.com.br>", :subject => "Pagamento Efetuado")
   end
   
   #Envia email (instruções para recuperar a senha)
