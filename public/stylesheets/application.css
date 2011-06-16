@@ -54,7 +54,7 @@ body
 				width:245px;
 				height:43px;
 				border:none;
-				background-color:transparent;
+				background-color:transparent !important;
 				font-size:14px;
 				padding-left:7px;
 				color:#666666 !important;
@@ -76,9 +76,10 @@ body
 				margin:auto;
 				text-align:center;
 			}
-			#MainContent #BoxCadastro #BoxContent #Box_Forgot h2
+			 .Box_Forgot h2
 			{
 				font-size:16px !important;
+				font-family:Arial;
 			}
 			#MainContent #BoxCadastro #BoxContent #Box_Forgot #voltar
 			{
@@ -109,8 +110,8 @@ body
 				height:45px;
 				width:64px;
 				border:none;
-				text-align:center;
-				background-color:transparent;
+				text-align:center !important;
+				background-color:transparent !important;
 				color:#405078 !important;
 				font-size:30px !important;
 				margin-top:10px !important;				

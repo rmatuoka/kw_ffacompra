@@ -17,7 +17,9 @@
                 <center><img src="/images/img_passo1.jpg" width="507" height="66" /></center>
                 <!-- <h1>1º Passo</h1>
                 <br /> -->
+				<div class="Tit_desc">
                 <h2>Escolha a data e quantidade de ingressos que você deseja adquirir, adicione ao carrinho e clique "PRÓXIMO PASSO".</h2>
+				</div>
                 <br />
                 <p>Para sua segurança, as compras de ingressos devem ser realizadas com, no mínimo, dois dias de antecedência da data desejada.</p>
                 <br />
@@ -49,7 +51,7 @@
             </div>
             <div class="Item_qtde">
             	<div class="Cleartop7"></div>
-            	<p class="f_qtde">
+            	<p class="f_qtde, f_menor">
 					<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
 					<%=f.hidden_field :ticket_id, :value => t.id%>
 					<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>

@@ -1,15 +1,113 @@
+<% $base = "http://www.festadasfloresdeatibaia.com.br/"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title></title>
+	<title>Ingressos</title>
 	<%= stylesheet_link_tag "application" %>
+	<%= stylesheet_link_tag "internal" %>
+	<%= stylesheet_link_tag "ingressos" %>
+	<%= javascript_include_tag "jquery" %>
+	<script>
+		jQuery.noConflict();
+		
+		jQuery(document).ready(function() {
+		    jQuery(".Sub_ul").hide();
+			jQuery("#click_submenu").click(function(){ 
+			if(jQuery(".Sub_ul").hasClass("occult"))
+					{
+					  jQuery(".Sub_ul").fadeIn('slow');
+					  jQuery(".Sub_ul").removeClass("occult")
+					  jQuery(".Sub_ul").addClass("showed")
+					}
+					else
+					{
+					  jQuery(".Sub_ul").fadeOut('slow');
+					  jQuery(".Sub_ul").removeClass("showed")
+					  jQuery(".Sub_ul").addClass("occult")				
+					}
+
+			});
+
+			jQuery(".Sub_ul2").hide();
+			jQuery("#click_submenu2").click(function(){ 
+			if(jQuery(".Sub_ul2").hasClass("occult"))
+					{
+					  jQuery(".Sub_ul2").fadeIn('slow');
+					  jQuery(".Sub_ul2").removeClass("occult")
+					  jQuery(".Sub_ul2").addClass("showed")
+					}
+					else
+					{
+					  jQuery(".Sub_ul2").fadeOut('slow');
+					  jQuery(".Sub_ul2").removeClass("showed")
+					  jQuery(".Sub_ul2").addClass("occult")				
+					}
+
+			});		
+
+		});
+	</script>
 	<%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
+
     <%= yield(:head) %>
 </head>
 <body>
-	<%= yield %>
+<div id="Geral">
+	<div id="Header">
+		<div id="Menu_top">
+	        <ul>
+	            	<li>
+						<%= link_to image_tag("menu/bt_afesta.png",:width =>"61",:height=>"24", :alt=>"festa", :title=>"festa", :style=>"margin-left:39px;"),"#",:id=>"click_submenu"%>
+	                    <ul class="Sub_ul occult" >
+	                    	<li class="Sub_li Sub_li_up"></li>
+	                    	<li class="Sub_li" style="text-align:center;"><%= image_tag("menu/Submenu/img_arrow.png", :width=>"22", :height=>"13")%></li>
+	                    	<li class="Sub_li"><%= link_to image_tag("menu/Submenu/bt_historia.png",:width =>"124",:height=>"24", :alt=>"historia", :title=>"historia"), $base+"afesta/historia.html"%></li>
+							<li class="Sub_li"><%= link_to image_tag("menu/Submenu/bt_evento.png",:width =>"124",:height=>"24", :alt=>"evento", :title=>"evento"), $base+"afesta/evento.html"%></li>
+	                        <li class="Sub_li"><%= link_to image_tag("menu/Submenu/bt_comochegar.png",:width =>"124",:height=>"24", :alt=>"comochegar", :title=>"comochegar"), $base+"afesta/comochegar.html"%></li>
+	                        <li class="Sub_li"><%= link_to image_tag("menu/Submenu/bt_mapadoevento.png",:width =>"124",:height=>"24", :alt=>"mapa do evento", :title=>"mapa do evento"), $base+"afesta/mapaevento.html"%></li>
+	                        <li class="Sub_li Sub_li_down"></li>
+	                    </ul>
+	                </li>
+	                <li><%= link_to image_tag("menu/bt_areaguias.png",:width =>"106",:height=>"26", :alt=>"guias", :title=>"guias", :style=>"margin-left:10px"),$base+"afesta/areadeguias.html"%></li>
+	                <li><%= link_to image_tag("menu/bt_programacao.png",:width =>"110",:height=>"27", :alt=>"programação", :title=>"programação", :style=>"margin-left:15px"),"#",:id=>"click_submenu2"%>
+	                    <ul class="Sub_ul2 occult" >
+	                    	<li class="Sub_li Sub_li_up"></li>
+	                    	<li class="Sub_li" style="text-align:center;"><%= image_tag("menu/Submenu/img_arrow.png", :width=>"22", :height=>"13")%></li>
+	                        <li class="Sub_li"><%= link_to image_tag("menu/Submenu/bt_calendario.png",:width =>"124",:height=>"24", :alt=>"calendario", :title=>"calendario"), "javascript:(void);", :onclick=>"alert('EM BREVE')" %></li>
+	                        <li class="Sub_li Sub_li_down"></li>
+	                    </ul>                
+	                </li>
+					<li><%= link_to image_tag("menu/bt_ingressos.png",:width =>"84",:height=>"25", :alt=>"ingressos", :title=>"ingressos", :style=>"margin-left:19px"),$base+"ingressos.html"%></li>
+					<li><%= link_to image_tag("menu/bt_imprensa.png",:width =>"77",:height=>"26", :alt=>"imprensa", :title=>"imprensa", :style=>"margin-left:15px"),$base+"guia_imprensa.html"%></li>
+					<li><%= link_to image_tag("menu/bt_contato.png",:width =>"72",:height=>"24", :alt=>"contato", :title=>"contato"),$base+"contato.html"%></li>
+	            </ul>
+		</div>  
+		<div id="Logo">
+			<%= link_to image_tag("logo_internal.png", :alt=>"home", :title=>"home", :style=>"margin-top:0px; margin-left:-290px;"),$base+"index.html", :class=>"Arrow_bt"%>
+	    </div>
+	</div>
+		<div id="Content">
+			<%= yield %>
+			<div id="Clear"></div>
+		</div>
+	<div id="Footer">
+     <div id="Footer_content">
+                <div id="Redessociais_box">
+					<%= image_tag("tit_redessociais.png",:width =>"93",:height=>"28")%><br />
+					<%= link_to image_tag("img_youtube.png",:width =>"39",:height=>"39", :alt=>"youtube", :title=>"youtube"),"http://www.youtube.com/user/FloreseMorangos?feature=mhum", :target=>"_blank"%>
+					<%= link_to image_tag("img_facebook.png",:width =>"39",:height=>"40", :alt=>"facebook", :title=>"facebook"),"http://www.facebook.com/home.php#!/pages/Festa-das-Flores-e-Morangos-de-Atibaia/152321504825652?sk=info", :target=>"_blank"%>
+					<%= link_to image_tag("img_twitter.png",:width =>"41",:height=>"40", :alt=>"twitter", :title=>"twitter"),"http://twitter.com/#!/floresemorangos", :target=>"_blank"%>
+                </div>   
+                <div id="Realizacao_box">
+					<%= link_to image_tag("img_realizacao.png",:width =>"83",:height=>"176", :alt=>"Associação Hortolândia de atibaia", :title=>"Associação Hortolândia de atibaia"),"http://pt-br.facebook.com/people/Associa%C3%A7%C3%A3o-Hortol%C3%A2ndia-de-Atibaia/100001759398778", :target=>"_blank"%>
+					<%= image_tag("img_logos_apoio.png",:width =>"653",:height=>"176")%>
+                </div> 
+     </div>
+	</div> 
+</div>
 </body>
 </html>
+

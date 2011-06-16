@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  
+  layout "application", :except => [:new, :create]
   def new
   
   end

@@ -1,0 +1,71 @@
+charset "UTF-8";
+/* CSS Document */
+
+*{}
+		.Bg_cad
+		{
+			background-image:url(../images/bg_input_search.png);
+			background-repeat:no-repeat;
+			background-position:top;
+			width:336px;
+			height:34px;
+			margin-top:5px;	
+		}
+		.Bg_cad input
+		{
+			margin:7px 0px 5px 6px;
+			*margin:7px 0px 5px 6px;
+			width:320px;	
+		}
+			
+#Geral #BgHome  h1
+{
+	width:300px;
+	height:auto;
+}
+	#Content_info
+	{
+		min-height:47px;
+		height:auto;
+		width:600px;
+		margin:auto;
+		margin-top:-25px;
+		margin-left:180px;
+		border:7px solid #FFF;	
+		background:#FFF;
+	}
+	#Content_formulario_left
+	{
+		*display:block;
+		*float:left;
+		width:340px;
+		display:inline-block;
+		 margin-top:60px;
+		 margin-right:0px;
+		 margin-left:30px;
+	}
+	#Content_formulario_right
+	{
+		*display:block;
+		*float:left;
+		float:right;
+		width:340px;
+		display:inline-block;
+		margin-top:60px;
+		margin-right:0px;
+		margin-left:-10px;
+	}
+.Tit_form_cadastro
+{
+font-family:Tahoma, Geneva, sans-serif;
+font-size:15px;
+color:#8b5225;
+font-weight:normal;
+}
+.Tit_info
+{
+font-family:Tahoma, Geneva, sans-serif;
+font-size:14px;
+color:#8b5225;
+font-weight:normal;
+}

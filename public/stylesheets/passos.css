@@ -78,6 +78,14 @@ p
 {
 	margin-left:22px;	
 }
+.Tit_desc
+{
+display: block;
+height: auto;
+margin: auto;
+position: relative;
+width: 935px;
+}
 .clear{ clear:both;}
 	.Box_content h1
 	{
@@ -180,6 +188,7 @@ table
 	}
 		.Cleartop7{ width:10px; height:48px; *height:25px;}
 		.f_qtde{ font-family:Verdana, Geneva, sans-serif; font-size:40px; color:#405078; text-align:center;}
+		.f_menor{font-size: 90%;}
 	.Item_promocional
 	{
 		float:left;
@@ -330,7 +339,7 @@ table
 		background-image:url('/images/bt_efetuarpgto.png');
 		background-position:center bottom;
 		background-repeat:no-repeat;
-		background-color:transparent;
+		background-color:transparent !important;
 		border:none;
 		width:311px;
 		height:110px;
