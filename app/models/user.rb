@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  validates_presence_of :nome, :message => "Nome deve ser preenchido!", :on => :save
+  validates_presence_of :cpf, :message => " CPF deve ser preenchido!", :on => :save
+  validates_uniqueness_of :cpf, :message => "CPF já está cadastrado no sistema!"
+  validates_presence_of :rg, :message => "RG deve ser preenchido!", :on => :save
+  validates_presence_of :cidade, :message => "Cidade deve ser preenchido!", :on => :save
+  validates_presence_of :estado, :message => "Estado deve ser preenchido!", :on => :save
+  
   acts_as_authentic do |c|
     c.login_field = 'email'
   end

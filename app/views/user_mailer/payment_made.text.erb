@@ -7,7 +7,7 @@ Itens Comprados:
 <% @order_itens.each do |item|%>
 	QUANTIDADE	DIA	TOTAL	TIPO		
 	<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.ticket_type.name %>
-							<%= item.ticket.ticket_date.strftime("%A") %>
+							I18n.localize(item.ticket.ticket_date, :format => "%A")
 <% end %>
 
 *Imprima e apresente este código de barras na portaria da festa.

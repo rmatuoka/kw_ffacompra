@@ -11,7 +11,7 @@
 	<br />
 	<%= form_tag password_resets_path do %>
 		<p>
-			<%= text_field_tag "email","E-mail",:class => "Form Align_ie7", :onfocus => "clearfield('email', 'E-mail')", :onblur => "clearfield('email', 'E-mail')"%>
+			<%= text_field_tag "email","E-mail",:class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 		</p>
 		<br />
 		<div class="Center">

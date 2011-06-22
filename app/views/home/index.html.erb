@@ -1,7 +1,33 @@
 <%content_for :head do%>
 	<script>
 	var htmlold = "";
-	
+
+	jQuery(document).ready(function($){
+	    $("#botao").click(function(){
+	        $("#cnpj").valida({
+	            tipo:"cnpj",
+	            erro : function(txtErro){
+	                alert("Ocorreu um erro: "+txtErro);
+	            },
+	            sucesso: function(){
+	                alert("Campo é um CNPJ de verdade");
+	            }
+	        });
+	    });
+	});
+
+
+	function check_text_onfocus(obj)
+	{
+	    if(obj.value == obj.defaultValue)
+	        obj.value = '';
+	}
+	function check_text_onblur(obj)
+	{
+	    if(obj.value=='')
+	        obj.value = obj.defaultValue;
+	}	
+
 	function clearfield(x, text)
 	{
 		if($(x).getValue() == text)
@@ -64,10 +90,10 @@
 			  	<%= content_tag :div, flash[:error], :id => "flash_error" %>
 			  <%end%>
 			  <p>
-			    <%= f.text_field :email, :value => "Nome", :class => "Form Align_ie7", :onfocus => "clearfield('user_session_email', 'Nome')", :onblur => "clearfield('user_session_email', 'Nome')" %>
+			    <%= f.text_field :email, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 			  </p>
 			  <p>
-			    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "clearfield('user_session_password', 'Senha')", :onblur => "clearfield('user_session_password', 'Senha')" %>
+			    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 			  </p>
 			  <p>
 				<%=image_submit_tag("btn_entrar.jpg", :class => "Botao")%>
@@ -94,28 +120,28 @@
 			  	<%= content_tag :div, flash[:error_cadastro], :id => "flash_error_cadastro" %>
 			  <%end%>
 				<p>
-				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "clearfield('user_nome', 'Nome')", :onblur => "clearfield('user_nome', 'Nome')" %>
+				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 				<p>
-				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "clearfield('user_email', 'E-Mail')", :onblur => "clearfield('user_email', 'E-Mail')" %>
+				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 				<p>
-				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "clearfield('user_password', 'Senha')", :onblur => "clearfield('user_password', 'Senha')" %>
+				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 					<p>
 				    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %>
 				  </p>
 				<p>
-				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "clearfield('user_cpf', 'CPF')", :onblur => "clearfield('user_cpf', 'CPF')" %>
+				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 				<p>
-				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "clearfield('user_rg', 'RG')", :onblur => "clearfield('user_rg', 'RG')" %>
+				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 				<p>
-				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "clearfield('user_cidade', 'Cidade')", :onblur => "clearfield('user_cidade', 'Cidade')" %>
+				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 				<p>
-				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "clearfield('user_estado', 'Estado')", :onblur => "clearfield('user_estado', 'Estado')" %>
+				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
 				  </p>
 			    <p class="treze">
 					Desejo receber informativos da Festa de Flores e Morangos de Atibaia em 

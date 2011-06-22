@@ -36,7 +36,7 @@
 			<div class="Item_dia">
             	<div class="Cleartop1"></div>
             	<p class="f_dia"><%=c.ticket.ticket_date.strftime('%d')%></p>
-                <p class="f_diasem"><%=c.ticket.ticket_date.strftime('%A')%></p>
+                <p class="f_diasem"><%=I18n.localize(c.ticket.ticket_date, :format => "%A")%></p>
             </div>
             <div class="Item_qtde">
             	<div class="Cleartop1"></div>

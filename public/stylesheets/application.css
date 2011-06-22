@@ -132,7 +132,7 @@ body
 #flash_login, #flash_notice, #flash_error, #flash_alert, #flash_error_cadastro {
  	font-size:13px;
 	padding: 5px 8px;
-	margin: 10px 0;
+	margin: 0px 0px 10px;
 }
 
 #flash_notice {

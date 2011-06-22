@@ -38,7 +38,7 @@ img {display:block;}
           <font face="Verdana, Geneva, sans-serif" size="4" style="color:#900;">
             <p style="margin-top:3px;">
               <%= item.ticket.ticket_date.strftime("%d") %><br>
-		      <%= item.ticket.ticket_date.strftime("%A") %>
+		      <%= I18n.localize(item.ticket.ticket_date, :format => "%A") %>
             </p>
           </font>
         </td>
