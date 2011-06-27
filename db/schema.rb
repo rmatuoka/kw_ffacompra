@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110614203905) do
+ActiveRecord::Schema.define(:version => 20110627180255) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20110614203905) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "classe"
+    t.integer  "above",                                         :default => 0
+    t.decimal  "discount",       :precision => 10, :scale => 0, :default => 0
   end
 
   create_table "users", :force => true do |t|

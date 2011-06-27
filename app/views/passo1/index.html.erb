@@ -4,6 +4,15 @@
 	<%if flash[:alert]%>
 		<script>alert('Para avançar, adicione ao menos um ingresso ao seu carrinho!')</script>
 	<%end%>
+	
+<script>
+	
+	function ShowDesconto(qtde)
+	{
+		alert("Desconto especial na compra de "+qtde+" ou mais ingressos!")
+	}
+	
+</script>	
 <%end%>
 
 <div id="BgHome">
@@ -25,7 +34,6 @@
                 <br />
                 <p>Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bilheteria da Festa de Flores e Morangos de Atibaia.</p>
                 <br />
-
             </div>
 	</div>
 </div>
@@ -44,7 +52,7 @@
             	<div class="Cleartop1"></div>
             	<p class="f_dia"><%=t.ticket_date.strftime('%d')%></p>
                 <p class="f_diasem">
-					<%=I18n.localize(t.ticket_date, :format => "%A")%>
+					<%= I18n.localize(t.ticket_date, :format => "%A") %>
 				</p>
             </div>
             <div class="Item_preco">
@@ -56,13 +64,17 @@
             	<p class="f_qtde, f_menor">
 					<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
 					<%=f.hidden_field :ticket_id, :value => t.id%>
-					<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
+					<% if t.above > 0 %>
+						<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2", :onclick =>"ShowDesconto(#{t.above+1})"%>
+					<% else %>
+						<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
+					<% end %>
 				</p>
             </div>
             <div class="Item_<%=t.ticket_type.name%>">
             	<div class="Cleartop3"></div>
 				<div id="btn_<%=t.id%>">
-            	<%if current_user.carts.find_by_ticket(t.id).count > 0%>
+            	<%if @carts_hash.values.include?(t.id)%>
 					<%=image_tag("bt_adicionado_carrinho.png")%>
 				<%else%>
 					<%=image_submit_tag("bt_adicionar_carrinho.png")%>
