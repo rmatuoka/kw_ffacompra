@@ -2,7 +2,11 @@ class Passo1Controller < ApplicationController
   before_filter :logado
   
   def index
-    @categories = Category.all(:include => :tickets)
+    #@categories = Category.all(:include => :tickets)
+    @tickets = Ticket.all(
+                          :conditions => ['published = 1'],
+                          :include => [:category, :ticket_type],
+                          :order => 'category_id, ticket_date')
     carts = current_user.carts.all
     @carts_hash = Hash.new
     i = 1

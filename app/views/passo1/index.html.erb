@@ -14,7 +14,10 @@
 	
 </script>	
 <%end%>
-
+<% 
+	atual = 0 
+	controle = 0
+%>
 <div id="BgHome">
     <div id="Search">
 
@@ -37,15 +40,22 @@
             </div>
 	</div>
 </div>
-<%@categories.each do |c|%>
-<div id="Semana_<%= "1" if c.id % 2 == 0%>">
+<%@tickets.each do |t|
+	if atual != t.category_id %>
+	<% if controle > 0 %>       
+	    <div class="clear"></div>    	
+	  </div>
+	</div>
+	<%end%>
+	
+<div id="Semana_<%= "1" if t.category_id % 2 == 0%>">
 	<div class="Box_content">
     
-	<h1><%=c.name%></h1><br>
+	<h1><%= t.category.name %></h1><br>
+<%end%>
     <!--   item  inteira  --> 
-		<%c.tickets.all_published.each do |t|%>
     	<div class="Item_ingresso <%=t.classe %>">
-        	<%=form_for @cart, :remote => true do |f|%>
+        	<%=form_for @cart, :remote => true do |f|%><!--Inicio do Form-->
 			<img src="/images/bg_ingressos_item_set.gif" width="20" height="104" style="float:left;" />
         	<div class="Item_latdir"></div>
 			<div class="Item_dia">
@@ -82,15 +92,39 @@
             	</div>
 			</div>
             <div class="Item_latesq"></div>
-			<%end%>
+			<%end%><!--Fim do Form-->
     	</div>
-		<%end%>
-        <!--   item inteira  --> 
-          
+        <!--item inteira--> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%if atual != t.category_id          
+	controle = controle +1
+end%>
+<% atual = t.category_id %>
+<%end%>
     <div class="clear"></div>    	
   </div>
 </div>
-<%end%>
 
 <div class="Box_content" style="text-align:right;">
 	<img src="/images/img_lineproxpass.png" width="894" height="13" />
