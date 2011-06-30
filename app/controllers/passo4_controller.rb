@@ -1,4 +1,4 @@
-class Passo4Controller < ApplicationController
+  class Passo4Controller < ApplicationController
   skip_before_filter :verify_authenticity_token
   #before_filter :logado
   
@@ -8,8 +8,9 @@ class Passo4Controller < ApplicationController
   
   def create
     return unless request.post?
-      pagseguro_notification do |notification|
-        if notification.valid?(:force)
+      #pagseguro_notification do |notification|
+      pagseguro_notification(account.authenticity_token) do |notification|
+        if notification.valid?
           order = Order.find(notification.order_id)
           order.payment_type = notification.payment_method
           order.status = notification.status
