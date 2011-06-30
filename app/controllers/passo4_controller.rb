@@ -7,9 +7,13 @@
   end
   
   def create
+    puts "=> CREATE"
     return unless request.post?
+    puts "=> RETURN"
       pagseguro_notification do |notification|
+      puts "=> PAGSEGURO NOTIFICATION"
         if notification.valid?
+        puts "=> NOTIFICATION VALID"
           order = Order.find(notification.order_id)
           order.payment_type = notification.payment_method
           order.status = notification.status
@@ -27,7 +31,7 @@
           #  Email.deliver_pedido(@user.email,corpo)
           end
         else
-          User.find(1)
+          puts "=> NOTIFICATION NOT VALID"
         end
       end
         render :nothing => true
