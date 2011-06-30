@@ -29,6 +29,11 @@ class Passo3Controller < ApplicationController
           @pedidos.amount = cart_item.amount
           @pedidos.price = cart_item.price
           @pedidos.save
+          
+          @order_product.billing = {
+            :name                  => current_user.name,
+            :email                 => current_user.email
+          }
           @order_product.add :id => cart_item.ticket_id, :quantity => cart_item.amount, :price => cart_item.price, :description => cart_item.ticket.name
           cart_item.destroy
         end
