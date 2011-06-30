@@ -12,7 +12,7 @@
     puts "=> RETURN"
       pagseguro_notification do |notification|
       puts "=> PAGSEGURO NOTIFICATION"
-        if notification.valid?
+        if notification.valid?(:force)
         puts "=> NOTIFICATION VALID"
           order = Order.find(notification.order_id)
           order.payment_type = notification.payment_method
