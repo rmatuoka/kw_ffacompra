@@ -27,7 +27,7 @@
           #  Email.deliver_pedido(@user.email,corpo)
           end
         else
-          puts "nao valido"
+          User.find(1)
         end
       end
         render :nothing => true
