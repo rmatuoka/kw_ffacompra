@@ -8,8 +8,7 @@
   
   def create
     return unless request.post?
-      #pagseguro_notification do |notification|
-      pagseguro_notification(account.authenticity_token) do |notification|
+      pagseguro_notification do |notification|
         if notification.valid?
           order = Order.find(notification.order_id)
           order.payment_type = notification.payment_method
