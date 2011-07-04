@@ -9,22 +9,22 @@
   def create
     logger.info "=> CREATE"
     return unless request.post?
-    logger.info "=> RETURN"
+    logger.info "==> RETURN"
       pagseguro_notification do |notification|
-      logger.info "=> PAGSEGURO NOTIFICATION"
+      logger.info "===> PAGSEGURO NOTIFICATION"
         if notification.valid?(:force)
-        logger.info "=> NOTIFICATION VALID"
+        logger.info "====> NOTIFICATION VALID"
           order = Order.find(notification.order_id)
           order.payment_type = notification.payment_method
           order.status = notification.status
           order.pagseguro_id = notification.transaction_id
           order.save
           
-          if order.status.to_s.include? 'completed'
+          if order.status.to_s.include? 'completed' or order.status.to_s.include? 'approved'
             UserMailer.payment_made(order).deliver
           end
         else
-          logger.info "=> NOTIFICATION NOT VALID"
+          logger.info "====> NOTIFICATION NOT VALID"
         end
       end
         render :nothing => true

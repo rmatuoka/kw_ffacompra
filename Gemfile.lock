@@ -51,7 +51,7 @@ GEM
       gem_plugin (>= 0.2.3)
     mysql2 (0.2.7)
     nifty-generators (0.4.6)
-    pagseguro (0.1.10)
+    pagseguro (0.1.12)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -86,5 +86,5 @@ DEPENDENCIES
   mongrel
   mysql2
   nifty-generators
-  pagseguro (~> 0.1.10)
+  pagseguro (~> 0.1.12)
   rails (= 3.0.3)

@@ -10,7 +10,7 @@ gem "nifty-generators", :group => :development
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mongrel'
 gem 'mail'
-gem "pagseguro", "~> 0.1.10"
+gem "pagseguro", "~> 0.1.12"
 
 # Use unicorn as the web server
 # gem 'unicorn'
