@@ -3,11 +3,11 @@ class Admin::SearchsController < ApplicationController
   
     
   def index
-    @Orders = Order.all(:include =>[:user], :order => 'id DESC').paginate :page => params[:page],:per_page => 10
+    @Orders = Order.all(:include =>[:user], :order => 'id DESC').paginate :page => params[:page],:per_page => 50
   end
 
   def show
-    @Orders = Order.all(:include =>[:user], :order => 'id DESC', :conditions => ['user_id = ?', params[:id]]).paginate :page => params[:page],:per_page => 10
+    @Orders = Order.all(:include =>[:user], :order => 'id DESC', :conditions => ['user_id = ?', params[:id]]).paginate :page => params[:page],:per_page => 50
   end
     
   def results
@@ -22,7 +22,7 @@ class Admin::SearchsController < ApplicationController
   
   def resend
     if !params[:cod].blank?
-      $Order = Order.all(:conditions=>['id = ? and (pagseguro_id is not null)',params[:cod]])
+      $Order = Order.all(:conditions=>['id = ? and ((status = "completed") or (status = "approved"))',params[:cod]])
       if $Order.count == 0
         flash[:notice] = "Dados informados são invalidos"
       else
