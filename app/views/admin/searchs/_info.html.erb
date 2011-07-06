@@ -1,0 +1,30 @@
+<div id="search">
+<p>Informe o número da autorização do Pag Seguro</p>
+<%=form_tag '/admin/searchs/results', :method => :get %>
+	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
+	<%=submit_tag "Buscar"%>
+</div>
+<br />
+<div id="orders">
+	<table>
+	  <tr>
+		<th width="100px">Ordem</th>
+	    <th width="250px">Usuário</th>
+	    <th width="150px">Status</th>
+	    <th width="150px">Tipo de Pagamento</th>
+	    <th width="250px">ID Pagseguro</th>
+	  </tr>
+	  <% for order in @Orders %>
+	    <tr>
+		  <td align="center"><%= order.id %></td>
+	      <td><%= order.user.nome %></td>
+	      <td align="center"><%= order.status %></td>
+	      <td align="center"><%= order.payment_type %></td>
+	      <td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>
+	    </tr>
+	  <% end %>
+	</table>
+	<br />
+	<%= will_paginate @Orders %>
+	
+</div>
