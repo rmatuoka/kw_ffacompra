@@ -12,7 +12,7 @@
 		<tr>
 		    <th width="150px">Quantidade</th>
 		    <th width="150px">Dia</th>
-		    <th width="150px">Valor</th>
+		    <th width="150px">Total</th>
 		    <th width="200px">Tipo</th>
 	  </tr>
 	<% @Results_itens.each do |item| %>
@@ -22,7 +22,7 @@
 				<%= item.ticket.ticket_date.strftime("%d") %><br/>
 				<%= I18n.localize(item.ticket.ticket_date, :format => "%A") %>
 			</td align="center">
-			<td align="center"><%=number_with_delimiter(item.price)%></td>
+			<td align="center"><%=number_with_delimiter(item.price * item.amount)%></td>
 			<td align="center"><%= item.ticket.ticket_type.name %></td>
 		</tr>
 	<%end%>

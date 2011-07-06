@@ -6,7 +6,7 @@ Itens Comprados:
 
 <% @order_itens.each do |item|%>
 	QUANTIDADE	DIA	TOTAL	TIPO		
-	<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price)%>	<%= item.ticket.ticket_type.name %>
+	<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price * item.amount)%>	<%= item.ticket.ticket_type.name %>
 							I18n.localize(item.ticket.ticket_date, :format => "%A")
 <% end %>
 
