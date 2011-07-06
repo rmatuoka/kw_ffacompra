@@ -3,6 +3,4 @@ class Order < ActiveRecord::Base
   has_many :order_tickets
   
   scoped_search :on => [:pagseguro_id]
-  
-  
 end

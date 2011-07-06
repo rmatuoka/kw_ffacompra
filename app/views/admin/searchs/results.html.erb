@@ -1,6 +1,13 @@
 <%if !@Results.blank?%>
 	<h2>Busca por: <%=params[:keyword]%></h2>
-	<br>
+	<br />
+	<br />
+	<label>Nome: </label><strong class="f_dados"><%= @Results.first.user.nome%></strong><br />
+	<label>E-mail: </label><strong class="f_dados"><%= @Results.first.user.email%></strong><br />
+	<label>CPF: </label><strong class="f_dados"><%= @Results.first.user.cpf%></strong><br />		
+	<br />
+	<br />
+	<%= link_to "Reenviar email", "/admin/searchs/resend?cod="+ @Results.first.id.to_s%>
 	<table border="1" align="center">
 		<tr>
 		    <th width="150px">Quantidade</th>
@@ -13,7 +20,7 @@
 			<td align="center"><%= item.amount %></td>
 			<td align="center">
 				<%= item.ticket.ticket_date.strftime("%d") %><br/>
-				<%= item.ticket.ticket_date.strftime("%A") %>
+				<%= I18n.localize(item.ticket.ticket_date, :format => "%A") %>
 			</td align="center">
 			<td align="center"><%=number_with_delimiter(item.price)%></td>
 			<td align="center"><%= item.ticket.ticket_type.name %></td>
@@ -21,8 +28,8 @@
 	<%end%>
 	</table>
 	<br />
-	<%= link_to "Voltar", admin_searchs_path %>
+	<%= link_to "Voltar", request.env['HTTP_REFERER'] %>
 <%else%>
 	<h2>Nenhum registro foi localizado!</h2><br/>
-	<%= link_to "Voltar", admin_searchs_path%>
+	<%= link_to "Voltar", request.env['HTTP_REFERER'] %>
 <%end%>

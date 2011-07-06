@@ -1,7 +1,7 @@
 body {
   background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  font-family: Tahoma, Helvetica, Arial;
+  font-size: 13px;
 }
 
 a img {
@@ -9,13 +9,40 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: #575353;
 }
 
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
+}
+
+h1
+{
+	color:#2e4214;
+	font-family: Tahoma, Helvetica, Arial;
+	font-size: 24px;
+}
+
+h2
+{
+	color:#2e4214;
+	font-family: Tahoma, Helvetica, Arial;
+	font-size: 16px;
+}
+
+th
+{
+	color:#2e4214;
+	font-family: Tahoma, Helvetica, Arial;
+	font-size: 16px;
+	background-color:#e4e4e4;
+}
+
+tr:hover
+{
+	background-color:#e4e4e4;
 }
 
 #user_nav
@@ -27,7 +54,10 @@ a {
 	border: solid 1px black;
 	margin-top: 20px;
 }
-
+#user_nav span
+{
+	float:right;
+}
 #container {
   width: 75%;
   margin: 0 auto;
@@ -54,6 +84,14 @@ a {
 
 .fieldWithErrors {
   display: inline;
+}
+#search input
+{
+	border:1px solid #666666;
+	background-color:#f6f3f1;
+	height:40px;
+	font-size:18px;
+	font-family: Tahoma, Helvetica, Arial;
 }
 
 .error_messages {
@@ -82,4 +120,8 @@ a {
 
 .error_messages ul {
   margin: 0;
+}
+.pagination{
+  text-align:center;
+}
 }

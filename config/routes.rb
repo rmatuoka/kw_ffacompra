@@ -26,6 +26,7 @@ KwFfacompra::Application.routes.draw do
     resources :searchs do
       collection do
         get 'results'
+        get 'resend'  
       end
     end
     

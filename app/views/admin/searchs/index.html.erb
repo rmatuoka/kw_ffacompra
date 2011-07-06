@@ -1,6 +1,1 @@
-<div id="search">
-<p>Informe o número da autorização do Pag Seguro</p>
-<%=form_tag '/admin/searchs/results', :method => :get %>
-	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
-	<%=submit_tag "Buscar"%>
-</div>
+<%= render 'info' %>
