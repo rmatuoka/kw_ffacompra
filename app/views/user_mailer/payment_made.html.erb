@@ -2,12 +2,12 @@
 <head>
 <title>PAGAMENTO CONFIRMADO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
 <style>
 img {display:block;}
 </style>
+</head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table width="550" height="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
 	<tr>
 		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_01.gif" width="51" height="220"></td>
 		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_02.gif" width="19" height="220"></td>
@@ -56,25 +56,28 @@ img {display:block;}
 	</tr>
 	<% end %>
 <!--FIM DO LOOP -->
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_02">
 	<tr>
-		<td width="51" height="19" ></td>
-		<td height="19" colspan="5">
+		<td height="19" align="center">
           <font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
             *Imprima e apresente este código de barras na portaria da festa.
           </font>
         </td>
-		<td width="45" height="19"></td>
 	</tr>
 	<tr>	
-		<td width="10" height="10"></td>
-		<td height="143" colspan="5">
+		<td height="100" align="center">
 			<img style="-webkit-user-select: none" src="http://www.festadasfloresdeatibaia.com.br/images/email/codbarras/barcode.php?bdata=<%= @order.pagseguro_id %>&amp;scale=1.2&amp;type=png">
-			<%= @order.pagseguro_id %>
 		</td>
-		<td width="10" height="10"></td>
 	</tr>
+	<tr>
+		<td height="19" align="center">
+			<font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
+				<%= @order.pagseguro_id %>
+			</font>
+		</td>
+	</tr>	
 </table>
-
 </body>
 
 </html>
