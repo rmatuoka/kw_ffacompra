@@ -9,32 +9,43 @@ img {display:block;}
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
 	<tr>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_01.gif" width="51" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_02.gif" width="19" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_03.gif" width="87" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_04.gif" width="99" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_05.gif" width="83" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_06.gif" width="166" height="220"></td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_07.gif" width="45" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_01.jpg" width="51" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_02.jpg" width="19" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_03.jpg" width="87" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_04.jpg" width="99" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_05.jpg" width="83" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_06.jpg" width="166" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_07.jpg" width="45" height="220"></td>
 	</tr>
 	<tr>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_08.gif" width="51" height="27"></td>
-		<td height="27" colspan="5" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_09.gif">
-          <font face="Verdana, Geneva, sans-serif" size="3" >
-            Itens Comprados:
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_08.jpg" width="51" height="159"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_09.jpg" colspan="5" height="159">
+          <font face="Verdana, Geneva, sans-serif" size="2" >
+			Parabéns <%= @order.user.nome %>.<br /><br />
+			Você acaba de adquirir nosso ingresso.<br />
+
+			Imprima esse comprovante e apresente no guichê: <br />
+			</font>
+			<font face="Verdana, Geneva, sans-serif" size="3" >
+			“COMPREI NA INTERNET” <br />
+			</font>
+			<font face="Verdana, Geneva, sans-serif" size="2" >
+			Será necessária comprovação dos dados do comprador. (RG, CPF ou CNH)<br /><br />
+			
+            Itens Comprados:<br />
           </font>
         </td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_14.gif" width="45" height="27"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_10.jpg" width="45" height="159"></td>
 	</tr>
 <!--INICIO DO LOOP-->
 	<% @order_itens.each do |item|%>
 	<tr>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_15.gif" width="51" height="141"></td>
-	    <td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_16.gif" width="19" height="141"></td>
-		<td width="87" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_17.gif" style="padding-top:2px;">
+		<td width="51" height="141"></td>
+	    <td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_11.jpg" width="19" height="141"></td>
+		<td width="87" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_12.jpg" style="padding-top:2px;">
           <font face="Verdana, Geneva, sans-serif" size="6" style="color:#060; margin-left:5px; margin-top:10px;">
             <%= item.amount %></font></td>
-		<td width="99" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_18.gif">
+		<td width="99" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_13.jpg">
           <font face="Verdana, Geneva, sans-serif" size="4" style="color:#900;">
             <p style="margin-top:3px;">
               <%= item.ticket.ticket_date.strftime("%d") %><br>
@@ -42,17 +53,17 @@ img {display:block;}
             </p>
           </font>
         </td>
-		<td width="83" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_19.gif" style="padding-top:3px;">
+		<td width="83" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_14.jpg" style="padding-top:3px;">
           <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
             <%=number_with_delimiter(item.price * item.amount)%>
           </font>
         </td>
-		<td width="166" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_20.gif" style="padding-top:6px;">
+		<td width="166" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_15.jpg" style="padding-top:6px;">
           <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
             <%= item.ticket.ticket_type.name %>
           </font>
         </td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/festa_barcode_21.gif" width="45" height="141"></td>
+		<td width="45" height="141"></td>
 	</tr>
 	<% end %>
 <!--FIM DO LOOP -->
@@ -77,6 +88,32 @@ img {display:block;}
 			</font>
 		</td>
 	</tr>	
+</table>
+<br />
+<br />
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_03">
+	<tr>
+		<td width="550" align="justify">
+			<font face="Verdana, Geneva, sans-serif" size="2" >
+				Os ingressos adquiridos através de internet estarão sujeitos ao acréscimo da taxa de entrega, no caso da entrega em domicílio.<br />
+				<br />
+				Não haverá devolução das taxas de entrega cobradas no caso de cancelamento da compra de ingressos.<br />
+				<br />
+				A Associação Hortolândia de Atibaia não fornecerá outros ingressos se os mesmos forem perdidos, roubados ou danificados, sendo estes de total responsabilidade do cliente.<br />
+				<br />
+				A Associação Hortolândia de Atibaia não se responsabiliza por possíveis problemas nos sistemas de compra online.<br />
+				<br />
+				<b>Meia Entrada e Promocionais.</b><br />
+				<br />
+				<b>Meia Entrada:</b> será obrigatória a apresentação do documento que comprove o direito ao benefício na entrada do evento.<br />
+				<b>Promocional:</b> serão aceitos somente nos dias definidos.<br />
+				<br />
+				No caso de não respeitar as normas acima, o produtor do evento se reserva ao direito de solicitar o pagamento do valor de complemento do ingresso referente ao preço de inteira.<br />
+			</font>
+			<br />
+			<br />
+        </td>
+	</tr>
 </table>
 </body>
 

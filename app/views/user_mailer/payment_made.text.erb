@@ -1,15 +1,41 @@
 PAGAMENTO CONFIRMADO
 
 
+Parabéns <%= @order.user.nome %>.
+Você acaba de adquirir nosso ingresso.
+
+Imprima esse comprovante e apresente no guichê: 
+“COMPREI NA INTERNET” 
+Será necessária comprovação dos dados do comprador. (RG, CPF ou CNH)
+
+
 Itens Comprados:
 
 
 <% @order_itens.each do |item|%>
 	QUANTIDADE	DIA	TOTAL	TIPO		
 	<%= item.amount %>		<%= item.ticket.ticket_date.strftime("%d") %>	<%=number_with_delimiter(item.price * item.amount)%>	<%= item.ticket.ticket_type.name %>
-							I18n.localize(item.ticket.ticket_date, :format => "%A")
+							<%= I18n.localize(item.ticket.ticket_date, :format => "%A") %>
 <% end %>
 
 *Imprima e apresente este código de barras na portaria da festa.
 
 <%= @order.pagseguro_id %>
+
+
+
+
+Os ingressos adquiridos através de internet estarão sujeitos ao acréscimo da taxa de entrega, no caso da entrega em domicílio.
+
+Não haverá devolução das taxas de entrega cobradas no caso de cancelamento da compra de ingressos.
+
+A Associação Hortolândia de Atibaia não fornecerá outros ingressos se os mesmos forem perdidos, roubados ou danificados, sendo estes de total responsabilidade do cliente.
+
+A Associação Hortolândia de Atibaia não se responsabiliza por possíveis problemas nos sistemas de compra online.
+
+Meia Entrada e Promocionais.
+
+Meia Entrada: será obrigatória a apresentação do documento que comprove o direito ao benefício na entrada do evento.
+Promocional: serão aceitos somente nos dias definidos.
+
+No caso de não respeitar as normas acima, o produtor do evento se reserva ao direito de solicitar o pagamento do valor de complemento do ingresso referente ao preço de inteira.
