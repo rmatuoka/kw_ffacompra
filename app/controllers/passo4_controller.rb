@@ -15,6 +15,11 @@
         if notification.valid?(:force)
         logger.info "====> NOTIFICATION VALID"
           order = Order.find(notification.order_id)
+          if order.pagseguro_id.blank?
+            $first = true
+          else
+            $first = false
+          end
           order.payment_type = notification.payment_method
           order.status = notification.status
           order.pagseguro_id = notification.transaction_id
@@ -22,6 +27,10 @@
           
           if order.status.to_s.include? 'completed' or order.status.to_s.include? 'approved'
             UserMailer.payment_made(order).deliver
+          else
+            if $first
+              UserMailer.transaction_initiated(order).deliver
+            end
           end
         else
           logger.info "====> NOTIFICATION NOT VALID"

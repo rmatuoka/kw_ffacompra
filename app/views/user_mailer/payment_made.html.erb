@@ -18,7 +18,7 @@ img {display:block;}
 		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_07.jpg" width="45" height="220"></td>
 	</tr>
 	<tr>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_08.jpg" width="51" height="159"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_08.jpg" width="51" height="159"></td> 
 		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_09.jpg" colspan="5" height="159">
           <font face="Verdana, Geneva, sans-serif" size="2" >
 			Parabéns <%= @order.user.nome %>.<br /><br />
@@ -35,17 +35,42 @@ img {display:block;}
             Itens Comprados:<br />
           </font>
         </td>
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_10.jpg" width="45" height="159"></td>
+	 	<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_10.jpg" width="45" height="159"></td> 
 	</tr>
+</table>
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_02">
 <!--INICIO DO LOOP-->
 	<% @order_itens.each do |item|%>
 	<tr>
-		<td width="51" height="141"></td>
-	    <td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_11.jpg" width="19" height="141"></td>
-		<td width="87" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_12.jpg" style="padding-top:2px;">
+		<td width="51"></td>
+	    <td width="19"></td>
+		<td width="87" align="center" valign="middle" style="padding-top:2px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#060; margin-left:5px; margin-top:10px;">
+            Quantidade</font></td>
+		<td width="99" align="center" valign="middle" >
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#900;">
+			Dia
+          </font>
+        </td>
+		<td width="83" align="center" valign="middle" style="padding-top:3px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
+            Total
+          </font>
+        </td>
+		<td width="166" align="center" valign="middle"  style="padding-top:6px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
+            Tipo
+          </font>
+        </td>
+		<td width="45"></td>
+	</tr>	
+	<tr>
+		<td width="51" height="70"></td>
+	    <td width="19" height="70"></td>
+		<td width="87" height="70" align="center" valign="middle" style="padding-top:2px;">
           <font face="Verdana, Geneva, sans-serif" size="6" style="color:#060; margin-left:5px; margin-top:10px;">
             <%= item.amount %></font></td>
-		<td width="99" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_13.jpg">
+		<td width="99" height="70" align="center" valign="middle" >
           <font face="Verdana, Geneva, sans-serif" size="4" style="color:#900;">
             <p style="margin-top:3px;">
               <%= item.ticket.ticket_date.strftime("%d") %><br>
@@ -53,22 +78,23 @@ img {display:block;}
             </p>
           </font>
         </td>
-		<td width="83" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_14.jpg" style="padding-top:3px;">
+		<td width="83" height="70" align="center" valign="middle" style="padding-top:3px;">
           <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
             <%=number_with_delimiter(item.price * item.amount)%>
           </font>
         </td>
-		<td width="166" height="141" align="center" valign="middle" background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_15.jpg" style="padding-top:6px;">
+		<td width="166" height="70" align="center" valign="middle"  style="padding-top:6px;">
           <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
             <%= item.ticket.ticket_type.name %>
           </font>
         </td>
-		<td width="45" height="141"></td>
+		<td width="45" height="70"></td>
 	</tr>
+	<tr height="15"></tr>
 	<% end %>
 <!--FIM DO LOOP -->
 </table>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_02">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_03">
 	<tr>
 		<td height="19" align="center">
           <font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
@@ -91,7 +117,8 @@ img {display:block;}
 </table>
 <br />
 <br />
-<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_03">
+<br />
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_04">
 	<tr>
 		<td width="550" align="justify">
 			<font face="Verdana, Geneva, sans-serif" size="2" >
@@ -110,8 +137,6 @@ img {display:block;}
 				<br />
 				No caso de não respeitar as normas acima, o produtor do evento se reserva ao direito de solicitar o pagamento do valor de complemento do ingresso referente ao preço de inteira.<br />
 			</font>
-			<br />
-			<br />
         </td>
 	</tr>
 </table>
