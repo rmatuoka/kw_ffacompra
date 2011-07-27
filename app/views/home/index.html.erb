@@ -120,29 +120,38 @@
 			  <%if flash[:error_cadastro]%>
 			  	<%= content_tag :div, flash[:error_cadastro], :id => "flash_error_cadastro" %>
 			  <%end%>
+				<label style="float:left; color:Grey; padding-left:3px;">Nome:<br /></label>
 				<p>
-				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+					
+				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">E-Mail:<br /></label>
 				<p>
-				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">Senha:<br /></label>
 				<p>
-				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">Confirme a senha:<br /></label>
 					<p>
-				    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %>
+				    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">CPF:<br /></label>
 				<p>
-				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">RG:<br /></label>
 				<p>
-				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">Cidade:<br /></label>
 				<p>
-				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
+				<label style="float:left; color:Grey; padding-left:3px;">Estado:<br /></label>
 				<p>
-				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
 				  </p>
 				<br />
 			    <p class="treze">
