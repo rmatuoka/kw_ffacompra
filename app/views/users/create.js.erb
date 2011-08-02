@@ -6,5 +6,5 @@ erro += "<%= escape_javascript(@user.errors[:rg].to_s + "<br/ >") if !@user.erro
 erro += "<%= escape_javascript(@user.errors[:cidade].to_s + "<br/ >") if !@user.errors[:cidade].empty?%>";
 erro += "<%= escape_javascript(@user.errors[:estado].to_s + "<br/ >") if !@user.errors[:estado].empty?%>";
 erro += "<%= escape_javascript("As senhas não conferem! ") if !@user.errors[:password].empty?%>";
-erro += "<%= escape_javascript("E-mail já cadastrado!") if !@user.errors[:email].empty?%>";
+erro += "<%= escape_javascript("E-mail já cadastrado ou em branco!") if !@user.errors[:email].empty?%>";
 $('flash_error_cadastro').update(erro);
