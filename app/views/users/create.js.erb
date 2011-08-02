@@ -1,1 +1,9 @@
-$('#ajax_cadastro').update("Teste");
+$('flash_error_cadastro').show();
+
+var erro = "<%= escape_javascript(@user.errors[:cpf].to_s)%> <br/ >";
+erro += "<%= escape_javascript(@user.errors[:nome].to_s + " <br/ >") if !@user.errors[:nome].to_s.blank?%>";
+erro += "<%= escape_javascript(@user.errors[:rg].to_s + "<br/ >") if !@user.errors[:rg].empty?%> ";
+erro += "<%= escape_javascript(@user.errors[:cidade].to_s + "<br/ >") if !@user.errors[:cidade].empty?%>";
+erro += "<%= escape_javascript(@user.errors[:estado].to_s + "<br/ >") if !@user.errors[:estado].empty?%>";
+erro += "<%= escape_javascript("E-mail já cadastrado!") if !@user.errors[:email].empty?%>";
+$('flash_error_cadastro').update(erro);

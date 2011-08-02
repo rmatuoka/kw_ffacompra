@@ -9,11 +9,13 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.role = "user"
     if @user.save
+      puts "SAVE"
       #UserMailer.payment_made(@user).deliver
-      redirect_to passo1_index_path, :notice => "Successfully created user."
+      #redirect_to passo1_index_path, :notice => "Successfully created user."
     else
-      flash[:error_cadastro] = "Todos os campos são obrigatórios!"
-      redirect_to home_index_path
+      puts @user.errors.to_s
+      #flash[:error_cadastro] = "Todos os campos são obrigatórios!"
+      #redirect_to home_index_path
     end
   end
 

@@ -116,57 +116,61 @@
 			<%=image_tag("tit_home_n_cadastrado.jpg")%>
 		</div>
 		<div id="BoxContent">
-			<%= form_for @user do |f| %>
-			  <%if flash[:error_cadastro]%>
-			  	<%= content_tag :div, flash[:error_cadastro], :id => "flash_error_cadastro" %>
-			  <%end%>
-				<label style="float:left; color:Grey; padding-left:3px;">Nome:<br /></label>
-				<p>
+			<div id="ajax_cadastro">	
+				<%= form_for @user, :remote => true do |f| %>
+				  <%#if flash[:error_cadastro]%>
+				  	<%#= content_tag :div, flash[:error_cadastro], :id => "flash_error_cadastro" %>
+				  <%#end%>
+				   <div id="flash_error_cadastro" style="display:none;"></div>
 					
-				    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">E-Mail:<br /></label>
-				<p>
-				    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">Senha:<br /></label>
-				<p>
-				    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">Confirme a senha:<br /></label>
+					<label style="float:left; color:Grey; padding-left:3px;">Nome:<br /></label>
 					<p>
-				    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">CPF:<br /></label>
-				<p>
-				    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">RG:<br /></label>
-				<p>
-				    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">Cidade:<br /></label>
-				<p>
-				    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<label style="float:left; color:Grey; padding-left:3px;">Estado:<br /></label>
-				<p>
-				    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
-				  </p>
-				<br />
-			    <p class="treze">
-					<%= f.check_box :receber_info, :checked => true%>  Desejo receber informativos da Festa de <br />
-					Flores e Morangos de Atibaia <br />
-					em meu e-mail.
-				</p>
-				  <p>
-					<%=image_submit_tag("btn_cadastrar.jpg", :class => "Botao")%>
-				  </p>
+					
+					    <%= f.text_field :nome, :value => "Nome", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">E-Mail:<br /></label>
+					<p>
+					    <%= f.text_field :email, :value => "E-Mail", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">Senha:<br /></label>
+					<p>
+					    <%= f.password_field :password, :value => "Senha", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">Confirme a senha:<br /></label>
+						<p>
+					    <%= f.password_field :password_confirmation, :class => "Form Align_ie7" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">CPF:<br /></label>
+					<p>
+					    <%= f.text_field :cpf, :value => "CPF", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">RG:<br /></label>
+					<p>
+					    <%= f.text_field :rg, :value => "RG", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">Cidade:<br /></label>
+					<p>
+					    <%= f.text_field :cidade, :value => "Cidade", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<label style="float:left; color:Grey; padding-left:3px;">Estado:<br /></label>
+					<p>
+					    <%= f.text_field :estado, :value => "Estado", :class => "Form Align_ie7", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %><br /><br />
+					  </p>
+					<br />
+				    <p class="treze">
+						<%= f.check_box :receber_info, :checked => true%>  Desejo receber informativos da Festa de <br />
+						Flores e Morangos de Atibaia <br />
+						em meu e-mail.
+					</p>
+					  <p>
+						<%=image_submit_tag("btn_cadastrar.jpg", :class => "Botao")%>
+					  </p>
 			  
-			<div id="cadastro_loading" style="display:none;">
-				<%=image_tag("loading.gif")%>
+				<div id="cadastro_loading" style="display:none;">
+					<%=image_tag("loading.gif")%>
+				</div>
+				<% end %>
 			</div>
-			<% end %>
 		</div>
 		<div id="BoxCadastro_Footer">
 			<%=image_tag("box_cadastro_bottom.jpg")%>
