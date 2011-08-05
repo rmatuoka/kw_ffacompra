@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20110627180255) do
     t.datetime "updated_at"
     t.string   "classe"
     t.integer  "above",                                         :default => 0
-    t.decimal  "discount",       :precision => 10, :scale => 2
+    t.decimal  "discount",       :precision => 10, :scale => 0, :default => 0
   end
 
   create_table "users", :force => true do |t|

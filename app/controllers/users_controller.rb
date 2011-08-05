@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.role = "user"
     if @user.save
-      puts "SAVE"
+
       #UserMailer.payment_made(@user).deliver
       #redirect_to passo1_index_path, :notice => "Successfully created user."
     else
