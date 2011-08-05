@@ -1,12 +1,12 @@
 <%if !@user.errors.blank?%>
 	$('flash_error_cadastro').show();
-	var erro = "<%= escape_javascript("CPF em branco ou já cadastrado!" + "<br />") if !@user.errors[:cpf].to_s.blank?%> ";
+	var erro = "<%= escape_javascript(raw("CPF em branco ou já cadastrado! <br />")) if !@user.errors[:cpf].to_s.blank?%> ";
 	erro += "<%= escape_javascript(@user.errors[:nome].to_s + " <br/ >") if !@user.errors[:nome].to_s.blank?%>";
 	erro += "<%= escape_javascript(@user.errors[:rg].to_s + "<br/ >") if !@user.errors[:rg].empty?%> ";
 	erro += "<%= escape_javascript(@user.errors[:cidade].to_s + "<br/ >") if !@user.errors[:cidade].empty?%>";
 	erro += "<%= escape_javascript(@user.errors[:estado].to_s + "<br/ >") if !@user.errors[:estado].empty?%>";
-	erro += "<%= escape_javascript("As senhas não conferem! ") if !@user.errors[:password].empty?%>";
-	erro += "<%= escape_javascript("E-mail já cadastrado ou em branco!") if !@user.errors[:email].empty?%>";
+	erro += "<%= escape_javascript(raw("As senhas não conferem! <br />")) if !@user.errors[:password].empty?%>";
+	erro += "<%= escape_javascript(raw("E-mail já cadastrado ou em branco! <br>")) if !@user.errors[:email].empty?%>";
 	$('flash_error_cadastro').update(erro);
 <%else%>
 	window.location.href = "/passo1";
