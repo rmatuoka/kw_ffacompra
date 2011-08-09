@@ -9,7 +9,9 @@
 	<label>RG: </label><strong class="f_dados"><%= @Results.first.user.rg%></strong><br />		
 	<br />
 	<br />
+	<% if (@Results.first.status == "completed") || (@Results.first.status == "approved")%>
 	<%= link_to "Reenviar email", "/admin/searchs/resend?cod="+ @Results.first.id.to_s%>
+	<% end %>
 	<table border="1" align="center">
 		<tr>
 		    <th width="150px">Quantidade</th>
