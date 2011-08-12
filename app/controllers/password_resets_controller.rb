@@ -36,7 +36,7 @@ class PasswordResetsController < ApplicationController
 
 	private
 	def load_user_using_perishable_token
-		@user = User.find_using_perishable_token(params[:id])
+		@user = User.find_using_perishable_token(params[:id], 3.hours.to_i)
 
 		if !@user
 			flash[:error] = "Link inválido! Tente novamente."
