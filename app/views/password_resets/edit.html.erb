@@ -1,37 +1,43 @@
-<div id="MainContent">
-	<!--BOX RECUPERAR SENH -->
-	<div id="BoxCadastro">
-		<div id="Titulo">
-			<%=image_tag("tit_home_cadastrado.jpg")%>
-		</div>
-		<div id="BoxContent">
-			<%if flash[:error]%>
-				<%= content_tag :div, flash[:error], :id => "flash_error" %>
-			<%end%>
-			<div id ="Box_Forgot">
-				<%=image_tag("box_linha.gif" , :style => "margin:18px 0px 18px 0px;")%>	
-				<div class="Center">
-					<h2>Alteração da senha</h2> 
+<div id="BgHome">
+    <div id="Search"></div>
+	<div id="MainContent">
+		<div style="margin:auto;width:680px;">	
+		<!--BOX CADASTRO -->
+			<div id="BoxCadastro">
+				<div id="Titulo">
+					<%=image_tag("tit_home_cadastrado.jpg")%>
 				</div>
-				<%= form_for @user, :url => password_reset_path, :method => :put do |f| %>
-					<p class="treze">
-						Senha<br>
-						<%= f.password_field :password, :class => "Form Align_ie7" %>
-					</p>
-					<br />
-					<p class="treze">
-						Confirmação de senha<br>
-						<%= f.password_field :password_confirmation, :class => "Form Align_ie7" %>
-					</p>
-					<br />
-					<div class="Center">
-							<%= f.submit "Alterar senha", :id => "botao" %> 
+				<div id="BoxContent">
+					<%if flash[:error]%>
+						<%= content_tag :div, flash[:error], :id => "flash_error" %>
+					<%end%>
+					<div id ="Box_Forgot">
+						<%=image_tag("box_linha.gif" , :style => "margin:18px 0px 18px 0px;")%>	
+						<div class="Center">
+							<h2>Alteração da senha</h2> 
+						</div>
+						<%= form_for @user, :url => password_reset_path, :method => :put do |f| %>
+							<p class="treze">
+								Senha<br>
+								<%= f.password_field :password, :class => "Form Align_ie7" %>
+							</p>
+							<br />
+							<p class="treze">
+								Confirmação de senha<br>
+								<%= f.password_field :password_confirmation, :class => "Form Align_ie7" %>
+							</p>
+							<br />
+							<div class="Center">
+									<%= f.submit "Alterar senha", :id => "botao" %> 
+							</div>
+						<% end %>
 					</div>
-				<% end %>
+				</div>
+				<div id="BoxCadastro_Footer">
+					<%=image_tag("box_cadastro_bottom.jpg")%>
+				</div>
 			</div>
-		</div>
-		<div id="Footer">
-			<%=image_tag("box_cadastro_bottom.jpg")%>
+		<!--FIM BOX CADASTRO-->
 		</div>
 	</div>
 </div>
