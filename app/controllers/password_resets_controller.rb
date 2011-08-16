@@ -19,29 +19,33 @@ class PasswordResetsController < ApplicationController
 
 	def edit
 	  load_user_using_perishable_token
+	  if !@user
+			flash[:error] = "O link expirou! Tente novamente."
+			redirect_to login_path
+		end
 	end
 
 	def update
-	  @user = User.find_using_perishable_token(params[:id])
-		@user.password = params[:user][:password]
-		@user.password_confirmation = params[:user][:password_confirmation]
-		if @user.save
-			flash[:error] = "Senha alterada com sucesso!"
-			redirect_to login_path
-		else
-		  flash[:error] = "Senhas precisão ser iguais!"
-			render :action => :edit
-		end
+	  load_user_using_perishable_token
+	  if !@user
+	      flash[:error] = "Ocorreu um erro!Tente novamente!"
+  			render :action => :edit
+	  else
+    		@user.password = params[:user][:password]
+    		@user.password_confirmation = params[:user][:password_confirmation]
+    		if @user.save
+    			flash[:error] = "Senha alterada com sucesso!"
+    			redirect_to login_path
+    		else
+    		  flash[:error] = "Senhas precisão ser iguais!"
+    			render :action => :edit
+    		end
+    end
 	end
 
 	private
 	def load_user_using_perishable_token
-		@user = User.find_using_perishable_token(params[:id])
-
-		if !@user
-			flash[:error] = "Link inválido! Tente novamente."
-			redirect_to login_path
-		end
+		@user = User.find_using_perishable_token(params[:id], 3.hours.to_i)
 	end
 	
   

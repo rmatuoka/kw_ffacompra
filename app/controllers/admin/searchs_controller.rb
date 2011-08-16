@@ -12,7 +12,8 @@ class Admin::SearchsController < ApplicationController
     
   def results
     if !params[:keyword].blank?
-      @Results = Order.search_for(params[:keyword])
+      @Results = Order.find(:all, :conditions => ['id = ? or pagseguro_id = ?', params[:keyword], params[:keyword]])
+      #@Results = Order.search_for(params[:keyword])
       
       if !@Results.blank?
         @Results_itens = @Results.first.order_tickets
