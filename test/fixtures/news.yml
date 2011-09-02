@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  description: MyText
+  published: false
+  image: MyString
+
+two:
+  title: MyString
+  description: MyText
+  published: false
+  image: MyString
