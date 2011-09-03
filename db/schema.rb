@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110627180255) do
+ActiveRecord::Schema.define(:version => 20110902165115) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "ticket_id"
-    t.decimal  "price",      :precision => 10, :scale => 0
+    t.decimal  "price",      :precision => 10, :scale => 2
     t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,11 +28,23 @@ ActiveRecord::Schema.define(:version => 20110627180255) do
     t.datetime "updated_at"
   end
 
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "published"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "order_tickets", :force => true do |t|
     t.integer  "order_id"
     t.integer  "ticket_id"
     t.integer  "amount"
-    t.decimal  "price",      :precision => 10, :scale => 0
+    t.decimal  "price",      :precision => 10, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20110627180255) do
     t.datetime "updated_at"
     t.string   "classe"
     t.integer  "above",                                         :default => 0
-    t.decimal  "discount",       :precision => 10, :scale => 0, :default => 0
+    t.decimal  "discount",       :precision => 10, :scale => 2, :default => 0.0
   end
 
   create_table "users", :force => true do |t|

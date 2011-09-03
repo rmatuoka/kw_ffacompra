@@ -1,0 +1,24 @@
+<% title "Admin/News" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @news.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= raw @news.description %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @news.published %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@news.image.url(:medium)) %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_news_path(@news) %> |
+  <%= link_to "Destroy", [:admin, @news], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_news_index_path %>
+</p>

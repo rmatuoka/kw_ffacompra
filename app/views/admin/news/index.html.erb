@@ -1,0 +1,21 @@
+<% title "Admin/News" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Published</th>
+  </tr>
+  <% for news in @news %>
+    <tr>
+      <td><%= news.title %></td>
+      <td><%= news.description %></td>
+      <td><%= news.published %></td>
+      <td><%= link_to "Show", [:admin, news] %></td>
+      <td><%= link_to "Edit", edit_admin_news_path(news) %></td>
+      <td><%= link_to "Destroy", [:admin, news], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/News", new_admin_news_path %></p>
