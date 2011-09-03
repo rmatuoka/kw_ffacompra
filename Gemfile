@@ -12,6 +12,7 @@ gem 'mongrel'
 gem 'mail'
 gem "pagseguro", "~> 0.1.12"
 gem "will_paginate", "~> 2.3.15"
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'
