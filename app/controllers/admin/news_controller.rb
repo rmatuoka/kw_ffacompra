@@ -43,6 +43,6 @@ class Admin::NewsController < ApplicationController
   def destroy
     @news = News.find(params[:id])
     @news.destroy
-    redirect_to admin_news_url, :notice => "Successfully destroyed news."
+    redirect_to admin_news_index_url, :notice => "Successfully destroyed news."
   end
 end
