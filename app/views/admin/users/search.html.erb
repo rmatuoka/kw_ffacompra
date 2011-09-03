@@ -1,13 +1,4 @@
-<% title "Usuários" %>
-
-<div id="search">
-<p>Informe o nome, e-mail, cpf ou rg do usuário.</p>
-<%=form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"%>
-	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
-	<%=submit_tag "Buscar"%>
-</form>
-<br><br>
-</div>
+<% title "Resultado da Busca por: #{params[:keyword]}" %>
 
 <table>
   <tr>
@@ -16,7 +7,7 @@
     <th>RG</th>
 	<th>Email</th>
   </tr>
-  <% for user in @users %>
+  	<%@Results.each do |user| %>
     <tr>
       <td><%= user.nome %></td>
       <td><%= user.cpf %></td>
@@ -29,6 +20,5 @@
     </tr>
   <% end %>
 </table>
-<script>
-	document.getElementById('keyword').focus();
-</script>
+<br><br>
+<%=link_to "Voltar", admin_users_path%>

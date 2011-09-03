@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   end
   acts_as_authorization_subject
   
+  scoped_search :on => [:email, :nome, :cpf, :rg]
+  
   has_many :carts
   has_many :orders
   

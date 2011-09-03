@@ -28,5 +28,11 @@ class Admin::UsersController < ApplicationController
     @user.destroy
     redirect_to admin_users_path, :notice => "Usuário Deletado com sucesso!"
   end
+  
+  def search
+    if !params[:keyword].blank?
+      @Results = User.search_for(params[:keyword])
+    end
+  end
     
 end

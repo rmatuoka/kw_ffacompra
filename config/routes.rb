@@ -22,7 +22,12 @@ KwFfacompra::Application.routes.draw do
   namespace(:admin){
     resources :tickets
     resources :static_contents
-    resources :users
+    resources :users do
+      collection do
+        get 'search'
+      end
+    end
+    
     resources :searchs do
       collection do
         get 'results'
