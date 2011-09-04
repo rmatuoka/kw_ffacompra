@@ -16,7 +16,7 @@ class Admin::SearchsController < ApplicationController
       #@Results = Order.search_for(params[:keyword])
       
       if !@Results.blank?
-        @Results_itens = @Results.first.order_tickets
+        @Results_itens = @Results.last.order_tickets
       end
     end
   end
