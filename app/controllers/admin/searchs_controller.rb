@@ -3,7 +3,8 @@ class Admin::SearchsController < ApplicationController
   
     
   def index
-    @Orders = Order.all(:include =>[:user], :order => 'id DESC').paginate :page => params[:page],:per_page => 50
+    #@Orders = Order.all(:include =>[:user], :order => 'id DESC').paginate :page => params[:page],:per_page => 50
+    @Orders = Order.all(:order => 'id DESC').paginate :page => params[:page],:per_page => 50
   end
 
   def show
