@@ -18,7 +18,7 @@
 	  <% for order in @Orders %>
 	    <tr>
 		  <td align="center"><%= order.id %></td>
-	      <td><%#= order.user.nome %></td>
+	      <td><%= User.find(order.user_id).nome %></td>
 	      <td align="center"><%= order.status %></td>
 	      <td align="center"><%= order.payment_type %></td>
 	      <td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>
