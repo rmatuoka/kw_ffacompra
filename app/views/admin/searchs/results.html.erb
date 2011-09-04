@@ -1,15 +1,15 @@
 <%if !@Results.blank?%>
 	<br />
 	<br />
-	<label>Nome: </label><strong class="f_dados"><%= @Results.first.user.nome%></strong><br />
-	<label>E-mail: </label><strong class="f_dados"><%= @Results.first.user.email%></strong><br />
-	<label>Status do Pedido: </label><strong class="f_dados"><%= traduz_status_do_pedido(@Results.first.status)%></strong><br />
-	<label>Forma de Pagamento: </label><strong class="f_dados"><%= traduz_tipo_do_pagamento(@Results.first.payment_type)%></strong><br />	
-	<label>CPF: </label><strong class="f_dados"><%= @Results.first.user.cpf%></strong><br />
-	<label>RG: </label><strong class="f_dados"><%= @Results.first.user.rg%></strong><br />		
+	<label>Nome: </label><strong class="f_dados"><%= @Results.last.user.nome%></strong><br />
+	<label>E-mail: </label><strong class="f_dados"><%= @Results.last.user.email%></strong><br />
+	<label>Status do Pedido: </label><strong class="f_dados"><%= traduz_status_do_pedido(@Results.last.status)%></strong><br />
+	<label>Forma de Pagamento: </label><strong class="f_dados"><%= traduz_tipo_do_pagamento(@Results.last.payment_type)%></strong><br />	
+	<label>CPF: </label><strong class="f_dados"><%= @Results.last.user.cpf%></strong><br />
+	<label>RG: </label><strong class="f_dados"><%= @Results.last.user.rg%></strong><br />		
 	<br />
 	<br />
-	<% if (@Results.first.status == "completed") || (@Results.first.status == "approved")%>
+	<% if (@Results.last.status == "completed") || (@Results.last.status == "approved")%>
 	<%= link_to "Reenviar email", "/admin/searchs/resend?cod="+ @Results.first.id.to_s%>
 	<% end %>
 	<table border="1" align="center">
