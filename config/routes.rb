@@ -35,6 +35,10 @@ KwFfacompra::Application.routes.draw do
         get 'results'
         get 'resend'  
       end
+      
+      member do
+        get 'baixa'
+      end
     end
     
     root :to => "static_contents#index"

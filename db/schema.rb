@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902165115) do
+ActiveRecord::Schema.define(:version => 20110913145124) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "ticket_id"
-    t.decimal  "price",      :precision => 10, :scale => 2
+    t.decimal  "price",      :precision => 10, :scale => 0
     t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(:version => 20110902165115) do
     t.integer  "order_id"
     t.integer  "ticket_id"
     t.integer  "amount"
-    t.decimal  "price",      :precision => 10, :scale => 2
+    t.decimal  "price",      :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "baixa",                                     :default => false
   end
 
   create_table "orders", :force => true do |t|
@@ -91,7 +92,7 @@ ActiveRecord::Schema.define(:version => 20110902165115) do
     t.datetime "updated_at"
     t.string   "classe"
     t.integer  "above",                                         :default => 0
-    t.decimal  "discount",       :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "discount",       :precision => 10, :scale => 0, :default => 0
   end
 
   create_table "users", :force => true do |t|

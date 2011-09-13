@@ -28,6 +28,13 @@ class Admin::SearchsController < ApplicationController
     end
   end
   
+  def baixa
+    @Baixa = OrderTicket.find(params[:id])
+    @Baixa.baixa = true
+    @Baixa.save
+    redirect_to request.env['HTTP_REFERER']
+  end
+  
   def resend
     if !params[:cod].blank?
       $Order = Order.all(:conditions=>['id = ? and ((status = "completed") or (status = "approved"))',params[:cod]])

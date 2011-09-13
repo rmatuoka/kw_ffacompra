@@ -20,7 +20,7 @@
 		    <th width="200px">Tipo</th>
 	  </tr>
 	<% @Results_itens.each do |item| %>
-		<tr>
+		<tr <%="bgcolor='Red'" if item.baixa?%>>
 			<td align="center"><%= item.amount %></td>
 			<td align="center">
 				<%= item.ticket.ticket_date.strftime("%d") %><br/>
@@ -28,6 +28,7 @@
 			</td align="center">
 			<td align="center"><%=number_with_delimiter(item.price * item.amount)%></td>
 			<td align="center"><%= item.ticket.ticket_type.name %></td>
+			<td align="center"><%=link_to("Dar baixa", baixa_admin_search_path(item)) if !item.baixa?%></td>
 		</tr>
 	<%end%>
 	</table>
