@@ -4,7 +4,7 @@ class Passo1Controller < ApplicationController
   def index
     #@categories = Category.all(:include => :tickets)
     @tickets = Ticket.all(
-                          :conditions => ['published = 1 and ticket_date >= curdate() + 2'],
+                          :conditions => ['published = 1 and ticket_date >= curdate() + 1'],
                           :include => [:category, :ticket_type],
                           :order => 'category_id, ticket_date')
     carts = current_user.carts.all
