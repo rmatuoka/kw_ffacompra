@@ -1,4 +1,5 @@
 KwFfacompra::Application.routes.draw do
+
   namespace(:admin){ resources :news }
 
   get "passo1/index"
@@ -22,6 +23,7 @@ KwFfacompra::Application.routes.draw do
   
   #Inicio do namespace Admin
   namespace(:admin){
+    resources :reports
     resources :tickets
     resources :static_contents
     resources :users do
