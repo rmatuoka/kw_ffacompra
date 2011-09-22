@@ -11,17 +11,17 @@
 	$subtotal = 0
 	@reports.each do |relatorio| %>
 	<tr />
-		<td align="center"><%= relatorio.qtde %></td>
+		<td align="center"><%= relatorio.qtde.to_i %></td>
 		<td align="center"><%= relatorio.ticket.ticket_date.strftime("%d") %><br/>
 		<%= I18n.localize(relatorio.ticket.ticket_date, :format => "%A") %></td>
 		<td align="center"><%= relatorio.ticket.ticket_type.name %></td>		
-		<td align="center"><%= number_with_delimiter($subtotal = relatorio.total)%></td>				
+		<td align="center"><%= number_to_currency($subtotal = relatorio.total)%></td>				
 	<tr />
 <% 	$total = $total + $subtotal
 	end %>
 	<tr height="50px">
 		<td colspan="3" align="right"><font size="6">Total:</font></td>
-		<td align="right"><font size="6"><%= number_with_delimiter($total) %>*</font></td>
+		<td align="right"><font size="6"><%= number_to_currency($total) %>*</font></td>
 	</tr>
 </table>
 <p style="font-size:12px;font-style:italic;">* Valor bruto, não está considerando a porcentagem descontada pelo pag seguro para gerenciar a transação!</p> 

@@ -1,13 +1,46 @@
 class Admin::SearchsController < ApplicationController
   layout "admin"
-  
-    
+
   def index
-    @Orders = Order.all(:include =>[:user], :order => 'id DESC').paginate :page => params[:page],:per_page => 50
+    fstatus = ' '
+    ftype = ' '
+    if !params[:status].blank?
+      if (ApplicationController.helpers.traduz_status_do_pedido(params[:status]) != '')
+        fstatus = " and status = '"+ params[:status]+"'" 
+      end
+    end
+    if !params[:type].blank?
+      if (ApplicationController.helpers.traduz_tipo_do_pagamento(params[:type]) != '')
+        ftype = " and payment_type = '"+ params[:type]+"'" 
+      end
+    end    
+    
+    @Orders = Order.find( :all,
+                          :conditions => ['id > 0'+fstatus+ftype],
+                          :order => 'id DESC',
+                          :include =>[:user]
+                        ).paginate :page => params[:page],:per_page => 50 
   end
 
   def show
-    @Orders = Order.all(:include =>[:user], :order => 'id DESC', :conditions => ['user_id = ?', params[:id]]).paginate :page => params[:page],:per_page => 50
+    fstatus = ' '
+    ftype = ' '
+    if !params[:status].blank?
+      if (ApplicationController.helpers.traduz_status_do_pedido(params[:status]) != '')
+        fstatus = " and status = '"+ params[:status]+"'" 
+      end
+    end
+    if !params[:type].blank?
+      if (ApplicationController.helpers.traduz_tipo_do_pagamento(params[:type]) != '')
+        ftype = " and payment_type = '"+ params[:type]+"'" 
+      end
+    end    
+    
+    @Orders = Order.find( :all,
+                          :conditions => ['user_id = ?'+fstatus+ftype, params[:id]],
+                          :order => 'id DESC',
+                          :include =>[:user]
+                        ).paginate :page => params[:page],:per_page => 50    
   end
     
   def results

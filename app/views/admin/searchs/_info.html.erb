@@ -1,9 +1,41 @@
-
-<div id="search">
-<p>Informe o número da autorização do Pag Seguro</p>
-<%=form_tag '/admin/searchs/results', :method => :get, :name=>"formkeyword"%>
-	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
-	<%=submit_tag "Buscar"%>
+<div style="margin-bottom:20px;">
+	<div id="search" style="display:block;float:left;">
+		<p>Informe o número da autorização do Pag Seguro</p>
+		<%=form_tag '/admin/searchs/results', :method => :get, :name=>"formkeyword"%>
+			<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
+			<%=submit_tag "Buscar"%>
+		</form>
+	</div>
+	<div id="filtrar" style="display:block;float:right;">
+		<% if $pag == 0 %>
+			<%=form_tag '/admin/searchs', :method => :get %>
+		<% else %>
+			<%=form_tag '/admin/searchs/'+params[:id], :method => :get %>		
+		<% end %>
+		<label style=" vertical-align:middle; text-align:left;">Filtrar por Status:</label>
+          <select name="status" id="status"style=" text-align:left;">
+              <option value>Todos</option>
+              <option value="completed">Completo</option>
+              <option value="incompleted">Incompleto</option>
+              <option value="pending">Aguardando Pagamento</option>
+              <option value="approved">Aprovado</option>
+              <option value="verifying">Em Análise</option>
+              <option value="canceled">Cancelado</option>
+              <option value="refunded">Devolvido</option>
+          </select><br />
+          <label style=" vertical-align:middle; text-align:left;">Tipo de Pagamento:</label>
+          <select name="type" id="type" style=" text-align:left; margin-right:10px;">
+              <option value>Todos</option>
+              <option value="credit_card">Cartão de Crédito</option>
+              <option value="invoice">Boleto</option>
+              <option value="pagseguro">Transferência entre Pagseguro</option>
+              <option value="online_transfer">Pagamento Online</option>
+              <option value="donation">Doação</option>
+          </select><br /><br />
+		<%= submit_tag "Filtrar...", :style=>"text-align:right;" %>
+		</form>
+	</div>
+<div class="clear"></div>
 </div>
 <br />
 <div id="orders">
@@ -19,8 +51,8 @@
 	    <tr>
 		  <td align="center"><%= order.id %></td>
 	      <td><%= order.user.nome if !order.user.nome.empty? %></td>
-	      <td align="center"><%= order.status %></td>
-	      <td align="center"><%= order.payment_type %></td>
+	      <td align="center"><%= traduz_status_do_pedido(order.status) %></td>
+	      <td align="center"><%= traduz_tipo_do_pagamento(order.payment_type) %></td>
 	      <td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>
 	    </tr>
 	  <% end %>

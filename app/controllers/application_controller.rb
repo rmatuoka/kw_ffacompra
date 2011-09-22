@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :current_user_session
     rescue_from 'Acl9::AccessDenied', :with => :access_denied
 
-
-
     private
 
     def current_user_session
