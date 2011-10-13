@@ -25,13 +25,13 @@
           order.pagseguro_id = notification.transaction_id
           order.save
           
-          if order.status.to_s.include? 'completed' or order.status.to_s.include? 'approved'
-            UserMailer.payment_made(order).deliver
-          else
-            if $first
-              UserMailer.transaction_initiated(order).deliver
-            end
-          end
+          #if order.status.to_s.include? 'completed' or order.status.to_s.include? 'approved'
+          #  UserMailer.payment_made(order).deliver
+          #else
+          #  if $first
+          #    UserMailer.transaction_initiated(order).deliver
+          #  end
+          #end
         else
           logger.info "====> NOTIFICATION NOT VALID"
         end
